@@ -1,0 +1,138 @@
+@import url("https://fonts.google.com/specimen/Comfortaa");
+
+:root{
+    --NordDark1: #2e3440;
+    --NordDark2: #3b4252;
+    --NordDark3: #434c5e;
+    --NordDark4: #4c566a;
+    --NordLight1: #d8dee9;
+    --NordLight2: #e5e9f0;
+    --NordLight3: #eceff4;
+    --NordBlue1: #8fbcbb;
+    --NordBlue2: #88c0d0;
+    --NordBlue3: #81a1c1;
+    --NordBlue4: #5e81ac;
+    --NordRed: #bf616a;
+    --NordOrange: #d08770;
+    --NordYellow: #ebcb8b;
+    --NordGreen: #a3be8c;
+    --NordPink: #b48ead;
+
+    --Expo: cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+*{
+    font-family: "Comfortaa";
+    color: var(--NordLight3);
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+    background-color: var(--NordDark2);
+}
+
+#Header{
+    background-color: var(--NordDark1);
+    
+    height: 0;
+    font-size: 0;
+    transition: font-size 1s var(--Expo), height 1s var(--Expo);
+
+    width: 99.25vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
+    z-index: 100;
+
+    gap: 2%;
+}
+
+#Header.Load{
+    height: 5vh;
+    font-size: 1.5rem;
+}
+
+.HeaderButton{
+    cursor: pointer;
+}
+
+.HeaderButton.Loaded{
+    transition: font-size 0.5s ease, color 0.5s ease;
+}
+
+.HeaderButton.Loaded:hover{
+    color: var(--NordBlue2);
+    font-size: 1.75rem;
+}
+
+#Content{
+    width: 310vw;
+    height: 195vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateY(0vh);
+    transition: transform 1s var(--Expo)
+}
+
+#Content.ShowPages{
+    transform: translateY(-95vh);
+}
+
+#LoadingPage{
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+#LoadingContainer{
+    width: 0;
+    height: 0;
+    border-radius: 0;
+    box-shadow: 0;
+    transition: width 1s var(--Expo), height 1s var(--Expo), border-radius 1s var(--Expo), box-shadow 1s var(--Expo);
+}
+
+#LoadingContainer.Load{
+    width: 99.25vw;
+    height: 92vh;
+    background-color: var(--NordDark1);
+    box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
+    border-radius: 1.5rem;
+}
+
+#Pages{
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0vw);
+    gap: 0 1vw 0 1vw;
+}
+
+.ContentContainer{
+    width: 99.25vw;
+    height: 92vh;
+    transition: width 1s var(--Expo), height 1s var(--Expo);
+    background-color: var(--NordDark1);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
+}
