@@ -10,25 +10,25 @@
 </head>
 <body>
     <div id="Header">
-        <div><p class="HeaderButton" id="ProjectsButton">Projects</p></div>
-        <div><p class="HeaderButton" id="EnenraButton">Enenra</p></div>
-        <div><p class="HeaderButton" id="AssetsButton">Assets</p></div>
+        <div><p onclick="displayPage(0)" class="HeaderButton" id="ProjectsButton">Projects</p></div>
+        <div><p onclick="displayPage(1)" class="HeaderButton" id="EnenraButton">Enenra</p></div>
+        <div><p onclick="displayPage(2)" class="HeaderButton" id="AssetsButton">Assets</p></div>
     </div>
     <div id="Content">
         <div id="LoadingPage">
             <div id="LoadingContainer">
-
+                <div><h1>LOADING</h1></div>
             </div> 
         </div>        
         <div id="Pages">
-            <div class="ContentContainer" id="ProjectsContainer">
-
+            <div class="PageContainer" id="ProjectsContainer">
+                <div><h1>PROJECTS</h1></div>
             </div>
-            <div class="ContentContainer" id="EnenraContainer">
-
+            <div class="PageContainer" id="EnenraContainer">
+                <div><h1>ENENRA</h1></div>
             </div>
-            <div class="ContentContainer" id="AssetsContainer">
-
+            <div class="PageContainer" id="AssetsContainer">
+                <div><h1>ASSETS</h1></div>
            </div>
         </div>
     </div>
