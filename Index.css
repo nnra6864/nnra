@@ -1,4 +1,4 @@
-@import url("https://fonts.google.com/specimen/Comfortaa");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 :root{
     --NordDark1: #2e3440;
@@ -19,6 +19,8 @@
     --NordPink: #b48ead;
 
     --Expo: cubic-bezier(0.87, 0, 0.13, 1);
+    --PageOffset: 50px;
+    --ContentFontSize: 1.5rem;
 }
 
 *{
@@ -46,21 +48,22 @@ body{
     font-size: 0;
     transition: font-size 1s var(--Expo), height 1s var(--Expo);
 
-    width: 99.25vw;
+    width: calc(100vw - var(--PageOffset));
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     border-radius: 0 0 1.5rem 1.5rem;
-    box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
+    box-shadow: none;
     z-index: 100;
 
-    gap: 2%;
+    gap: 5%;
 }
 
 #Header.Load{
     height: 5vh;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
 }
 
 .HeaderButton{
@@ -73,27 +76,24 @@ body{
 
 .HeaderButton.Loaded:hover{
     color: var(--NordBlue2);
-    font-size: 1.75rem;
+    font-size: 2.5rem;
 }
 
 #Content{
-    width: 310vw;
-    height: 195vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    transform: translateY(0vh);
-    transition: transform 1s var(--Expo)
+    transition: transform 1s var(--Expo);
 }
 
 #Content.ShowPages{
-    transform: translateY(-95vh);
+    transform: translateY(-100vh);
 }
 
 #LoadingPage{
-    width: 100%;
-    height: 95vh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -114,32 +114,34 @@ body{
 }
 
 #LoadingContainer.Load{
-    width: 99.25vw;
-    height: 92vh;
+    width: calc(100% - var(--PageOffset));
+    height: calc(100% - var(--PageOffset));
     background-color: var(--NordDark1);
     box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
     border-radius: 1.5rem;
 }
 
 #LoadingContainer.Unload{
+    color: transparent;
     background-color: transparent;
     box-shadow: none;
+    font-size: 0;
 }
 
 #Pages{
-    width: 100%;
+    width: calc(300vw + (4 * var(--PageOffset))); 
     height: 95vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 0.75vw;
     transition: transform 0.75s var(--Expo);
+    column-gap: var(--PageOffset);
 }
 
 .PageContainer{
-    width: 99.25vw;
-    height: 92vh;
+    width: calc(100vw - var(--PageOffset));
+    height: calc(95vh - var(--PageOffset));
     border-radius: 1.5rem;
     background-color: transparent;
     box-shadow: none;
@@ -153,4 +155,19 @@ body{
 .PageContainer.Load{
     background-color: var(--NordDark1);
     box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
+}
+
+#EnenraContainer{
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: var(--ContentFontSize);
+}
+
+.Image{
+    width: 512px;
+    height: 512px;
+    border-radius: 10%;
 }
