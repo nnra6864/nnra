@@ -27,8 +27,8 @@
     font-family: "Comfortaa";
     color: var(--NordLight3);
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -46,7 +46,7 @@ body{
     
     height: 0;
     font-size: 0;
-    transition: font-size 1s var(--Expo), height 1s var(--Expo);
+    transition: font-size 1s var(--Expo), height 1s var(--Expo), border 1s var(--Expo);
 
     width: calc(100vw - var(--PageOffset));
     display: flex;
@@ -54,6 +54,7 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 0 0 1.5rem 1.5rem;
+    border-color: transparent;
     box-shadow: none;
     z-index: 100;
 
@@ -64,6 +65,8 @@ body{
     height: 5vh;
     font-size: 2rem;
     box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
+    border: 2px solid var(--NordBlue4);
+    border-top: none;
 }
 
 .HeaderButton{
@@ -143,6 +146,7 @@ body{
     width: calc(100vw - var(--PageOffset));
     height: calc(95vh - var(--PageOffset));
     border-radius: 1.5rem;
+    border: 2px solid var(--NordBlue4);
     background-color: transparent;
     box-shadow: none;
 
@@ -166,8 +170,42 @@ body{
     font-size: var(--ContentFontSize);
 }
 
-.Image{
-    width: 512px;
-    height: 512px;
-    border-radius: 10%;
+.GridImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    object-fit: contain;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 5px;
+    border: 2px solid var(--NordBlue3);
+    transition: scale 0.25s ease-out, border-radius 0.25s ease-out, filter 0.25s ease-out, box-shadow 0.25s ease-out;
+    scroll-snap-align: start;
 }
+
+.GridImage:hover{
+    scale: 102%;
+    border-radius: 2.5%;
+    filter: brightness(110%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 10px;
+}
+
+.ImageGrid{
+    display: grid;
+    grid-auto-flow: dense;
+    align-items: flex-start;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(min(10%, 512px), max(256px, 10%)));
+    grid-auto-rows: max-content;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 20px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 10px;
+}
+
+.ScrollableContainer{
+    scrollbar-width: none;
+    scrollbar-color: var(--NordDark2) transparent;
+    
+}
+
