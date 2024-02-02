@@ -193,7 +193,7 @@ body{
     grid-auto-flow: dense;
     align-items: flex-start;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(min(10%, 512px), max(256px, 10%)));
+    grid-template-columns: repeat(auto-fill, minmax(64px, min(20%, 512px)));
     grid-auto-rows: max-content;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
