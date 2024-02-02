@@ -205,6 +205,7 @@ body{
     border: 2px solid transparent;
     border-radius: 0;
     box-shadow: none;
+    cursor: pointer;
     transition:
             scale 1s var(--Expo),
             border 1s var(--Expo),
@@ -213,7 +214,7 @@ body{
 }
 
 .GridImage.Load{
-    scale: 98%;
+    scale: 100%;
     border: 2px solid var(--NordBlue3);
     border-radius: 5%;
     box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 5px;
@@ -228,7 +229,7 @@ body{
 }
 
 .GridImage.Loaded:hover{
-    scale: 100%;
+    scale: 105%;
     border-radius: 2.5%;
     filter: brightness(110%);
     box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 10px;
