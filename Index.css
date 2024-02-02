@@ -151,7 +151,7 @@ body{
     box-shadow: none;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -161,34 +161,24 @@ body{
     box-shadow: 0 0 0.25rem 0.25rem var(--NordDark1);
 }
 
-#EnenraContainer{
-    padding: 10px 10px 10px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    font-size: var(--ContentFontSize);
-}
-
-.GridImage{
+.ScrollableContainer{
     width: 100%;
     height: 100%;
-    border-radius: 5%;
-    object-fit: contain;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 5px;
-    border: 2px solid var(--NordBlue3);
-    transition: scale 0.25s ease-out, border-radius 0.25s ease-out, filter 0.25s ease-out, box-shadow 0.25s ease-out;
-    scroll-snap-align: start;
-}
-
-.GridImage:hover{
-    scale: 102%;
-    border-radius: 2.5%;
-    filter: brightness(110%);
-    box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    scroll-padding-top: 20px;
+    scroll-padding-bottom: 20px;
 }
 
 .ImageGrid{
+    width: 100%;
     display: grid;
     grid-auto-flow: dense;
     align-items: flex-start;
@@ -197,15 +187,69 @@ body{
     grid-auto-rows: max-content;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    padding: 20px;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-padding-top: 10px;
 }
 
-.ScrollableContainer{
-    scrollbar-width: none;
-    scrollbar-color: var(--NordDark2) transparent;
-    
+.GridImageContainer{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    scroll-padding-top: 5px;
+    scroll-snap-align: start;
 }
 
+.GridImage{
+    width: 100%;
+    height: 100%;
+    scale: 0;
+    border: 2px solid transparent;
+    border-radius: 0;
+    box-shadow: none;
+    transition:
+            scale 1s var(--Expo),
+            border 1s var(--Expo),
+            border-radius 1s var(--Expo),
+            box-shadow 1s var(--Expo);
+}
+
+.GridImage.Load{
+    scale: 98%;
+    border: 2px solid var(--NordBlue3);
+    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 5px;
+}
+
+.GridImage.Loaded{
+    transition:
+            scale 0.25s ease-out,
+            border-radius 0.25s ease-out,
+            filter 0.25s ease-out,
+            box-shadow 0.25s ease-out;
+}
+
+.GridImage.Loaded:hover{
+    scale: 100%;
+    border-radius: 2.5%;
+    filter: brightness(110%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 10px;
+}
+
+#Overlay{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s var(--Expo);
+}
+
+#Overlay.Shown{
+    opacity: 1;
+    pointer-events: all;
+}
