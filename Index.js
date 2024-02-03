@@ -57,11 +57,11 @@ async function loadPage(){
 
 async function loadData(jsonFile, list){
     const response = await fetch(jsonFile);
-    if (!response.ok) throw new Error("Failed to Fetch Data!");
+    if (!response.ok) { showErrorOverlay(); throw new Error("Failed to Fetch Data!"); }
     
     let jsonData;
     try { jsonData = await response.json(); }
-    catch (error) { throw new Error(error); }
+    catch (error) { showErrorOverlay(); throw new Error(error); }
     if (!Array.isArray(jsonData) || jsonData.length <= 0) throw new Error("Missing Data!");
     
     for (const data of jsonData)
@@ -117,4 +117,8 @@ async function toggleOverlay(shown, data){
     else overlay.classList.remove('Shown');
     await delay(500);
     overlayTransitioning = false;
+}
+
+function showErrorOverlay(){
+    errorOverlay.classList.add('Shown');
 }

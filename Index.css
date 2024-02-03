@@ -245,6 +245,8 @@ body{
     width: 100%;
     height: 100%;
     z-index: 9999;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     opacity: 0;
@@ -256,3 +258,13 @@ body{
     opacity: 1;
     pointer-events: all;
 }
+
+#ErrorOverlay{
+    flex-direction: column;
+}
+
+.ErrorText{
+    font-size: 3vw;
+    color: var(--NordRed);
+}
+
