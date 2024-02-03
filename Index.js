@@ -1,17 +1,38 @@
-let hasLoaded = false;
-let pages = document.getElementById('Pages');
-let isSwitching = false;
-let loadedProjects = false, loadedAssets = false;
-let overlay = document.getElementById("Overlay");
-let overlayTransitioning = false;
+class DataContainer{
+    constructor(data) {
+        this.name = data && data.Name || '';
+        this.summary = data && data.Summary || '';
+        this.description = data && data.Description || '';
 
-async function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+        this.links = {};
+        for (const key in data)
+            if (data.hasOwnProperty(key) && key !== 'Name' && key !== 'Summary' && key !== 'Description')
+                this.links[key.toLowerCase()] = data[key];
+    }
 }
 
-document.addEventListener('DOMContentLoaded', loadPageNew)
+let pages = document.getElementById('Pages');
+let overlay = document.getElementById("Overlay");
+let projectImages = document.getElementById("ProjectImages");
+let assetImages = document.getElementById("AssetImages");
+let errorOverlay = document.getElementById("ErrorOverlay");
+let hasLoaded = false;
+let isSwitching = false;
+let overlayTransitioning = false;
+const projectList = [];
+const assetList = [];
+let loadedProjects = false, loadedAssets = false;
+let transitionedProjects = false, transitionedAssets = false;
 
-async function loadPageNew(){
+document.addEventListener('DOMContentLoaded', loadPage);
+
+async function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function loadPage(){
+    await loadData('/Data/Projects.json', projectList);
+    await loadData('/Data/Assets.json', assetList);
     await delay(50);
     let loadingContainer = document.getElementById('LoadingContainer');
     loadingContainer.classList.add('Load');
@@ -34,6 +55,40 @@ async function loadPageNew(){
     hasLoaded = true;
 }
 
+async function loadData(jsonFile, list){
+    const response = await fetch(jsonFile);
+    if (!response.ok) throw new Error("Failed to Fetch Data!");
+    
+    let jsonData;
+    try { jsonData = await response.json(); }
+    catch (error) { throw new Error(error); }
+    if (!Array.isArray(jsonData) || jsonData.length <= 0) throw new Error("Missing Data!");
+    
+    for (const data of jsonData)
+        handleData(data, list);
+    
+    if (list === projectList) loadedProjects = true;
+    else loadedAssets = true;
+}
+
+function handleData(data, list){
+    const dataContainer = new DataContainer(data);
+    const imageContainer = list === projectList ? projectImages : assetImages;
+    const newGridImageContainer = document.createElement('div');
+    const newImage = document.createElement('img');
+    
+    newGridImageContainer.classList.add('GridImageContainer');
+    newImage.classList.add('GridImage', list === projectList ? 'ProjectImage' : 'AssetImage');
+    newImage.src = dataContainer.links['image'];
+    newImage.alt = 'Failed to load the image';
+    newImage.dataContainer = dataContainer;
+    newImage.addEventListener('click', function (){
+        toggleOverlay(true, this.dataContainer);
+    });
+    newGridImageContainer.appendChild(newImage);
+    imageContainer.appendChild(newGridImageContainer);
+}
+
 async function displayPage(i){
     if (!hasLoaded || isSwitching) return;
     isSwitching = true;
@@ -41,8 +96,8 @@ async function displayPage(i){
     await delay(500);
     isSwitching = false;
     let images = [];
-    if (i === 0 && !loadedProjects) { images = document.getElementsByClassName("ProjectImage"); loadedProjects = true; }
-    else if (i === 2 && !loadedAssets) { images = document.getElementsByClassName("AssetImage"); loadedAssets = true; }
+    if (i === 0 && !transitionedProjects) { images = document.getElementsByClassName("ProjectImage"); transitionedProjects = true; }
+    else if (i === 2 && ! transitionedAssets) { images = document.getElementsByClassName("AssetImage");  transitionedAssets = true; }
     for (const image of images) {
         loadGridImage(image);
         await delay(100);
@@ -51,11 +106,11 @@ async function displayPage(i){
 
 async function loadGridImage(image){
     image.classList.add('Load');
-    await delay(1000)
+    await delay(1000);
     image.classList.add('Loaded');
 }
 
-async function toggleOverlay(shown){
+async function toggleOverlay(shown, data){
     if (overlayTransitioning) return;
     overlayTransitioning = true;
     if (shown) overlay.classList.add('Shown');
