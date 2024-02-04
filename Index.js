@@ -7,7 +7,7 @@ class DataContainer{
         this.links = {};
         for (const key in data)
             if (data.hasOwnProperty(key) && key !== 'Name' && key !== 'Summary' && key !== 'Description')
-                this.links[key.toLowerCase()] = data[key];
+                this.links[key] = data[key];
     }
 }
 
@@ -79,7 +79,7 @@ function handleData(data, list){
     
     newGridImageContainer.classList.add('GridImageContainer');
     newImage.classList.add('GridImage', list === projectList ? 'ProjectImage' : 'AssetImage');
-    newImage.src = dataContainer.links['image'];
+    newImage.src = dataContainer.links['Image'];
     newImage.alt = 'Failed to load the image';
     newImage.dataContainer = dataContainer;
     newImage.addEventListener('click', function (){
