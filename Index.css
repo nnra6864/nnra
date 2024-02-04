@@ -196,7 +196,6 @@ body{
     height: 100%;
     align-items: center;
     justify-content: center;
-    scroll-padding-top: 5px;
     scroll-snap-align: start;
 }
 
@@ -268,10 +267,10 @@ body{
     color: var(--NordRed);
 }
 
-#OverlayContent{
+#OverlayContainer{
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    justify-content: flex-start;
     width: fit-content;
     height: 90%;
     border: 2px solid var(--NordBlue4);
@@ -279,6 +278,15 @@ body{
     padding: max(25px, 1vw);
     background-color: var(--NordDark1);
     overflow: scroll;
+    scrollbar-width: none;
+    pointer-events: inherit;
+}
+
+#OverlayContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 20px;
 }
 
 #OverlayHeader{
@@ -319,7 +327,7 @@ body{
     flex-direction: row;
     margin-top: 5px;
     height: min(2.25rem, 2.25vw);
-    column-gap: 20px;
+    column-gap: 10px;
 }
 
 .OverlayHeaderLink{
@@ -328,6 +336,7 @@ body{
     column-gap: 5px;
     height: min(2rem, 2vw);
     font-size: min(2rem, 2vw);
+    cursor: pointer;
     transition: height 0.5s ease, font-size 0.5s ease, color 0.5s ease;
 }
 
@@ -337,10 +346,20 @@ body{
     color: var(--NordBlue2);
 }
 
+.OverlayHeaderLink a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .OverlayHeaderLink p{
     color: inherit;
 }
 
 .OverlayHeaderLink img{
     height: inherit;
+}
+
+#OverlayBody{
+    display: flex;
+    flex-direction: column;
 }
