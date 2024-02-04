@@ -273,10 +273,10 @@ body{
     flex-direction: column;
     row-gap: 20px;
     width: fit-content;
-    height: 75%;
+    height: 90%;
     border: 2px solid var(--NordBlue4);
     border-radius: 20px;
-    padding: 20px;
+    padding: max(25px, 1vw);
     background-color: var(--NordDark1);
     overflow: scroll;
 }
@@ -294,7 +294,8 @@ body{
 #OverlayHeaderImage{
     height: min(15rem, 15vw);
     border: 2px solid var(--NordBlue3);
-    border-radius: 20px;
+    border-radius: 10%;
+    transition: height 0.5s ease;
 }
 
 #OverlayHeaderText{
@@ -304,33 +305,35 @@ body{
 }
 
 #OverlayHeaderName{
-    font-size: min(5rem, 5vw);
+    font-size: min(6rem, 5vw);
+    transition: font-size 0.5s ease, color 0.5s ease;
 }
 
 #OverlayHeaderSummary{
-    font-size: min(3rem, 3vw);
+    font-size: min(4rem, 3vw);
+    transition: font-size 0.5s ease, color 0.5s ease;
 }
 
 #OverlayHeaderLinks{
     display: flex;
     flex-direction: row;
     margin-top: 5px;
+    height: min(2.25rem, 2.25vw);
     column-gap: 20px;
 }
 
 .OverlayHeaderLink{
     display: flex;
     flex-direction: row;
-    align-items: center;
     column-gap: 5px;
-    height: min(1.5rem, 2vw);
-    font-size: min(1.5rem, 2vw);
+    height: min(2rem, 2vw);
+    font-size: min(2rem, 2vw);
     transition: height 0.5s ease, font-size 0.5s ease, color 0.5s ease;
 }
 
 .OverlayHeaderLink:hover{
-    height: min(1.75rem, 2.25vw);
-    font-size: min(1.75rem, 2.25vw);
+    height: min(2.25rem, 2.25vw);
+    font-size: min(2.25rem, 2.25vw);
     color: var(--NordBlue2);
 }
 
