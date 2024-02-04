@@ -37,7 +37,28 @@
         </div>
     </div>
     <div id="Overlay" class="Overlay" onclick="toggleOverlay(false)">
-        <div id="OverlayContent">
+        <div id="OverlayContent" onclick="event.stopImmediatePropagation()">
+            <div id="OverlayHeader">
+                <img id="OverlayHeaderImage" src="https://lh3.googleusercontent.com/pw/ABLVV87gaKChGKtxzE6fGYlwmSnQEdbRNL2b7XVWgQx-CLGItpWDKJjFce-216ihRsgCliYWEIKJJSm13gOBZYcCGv-SqlU-AtAVyl6HUKB0yEZtHx93aslz7P5I722801G5lvQ6H0j3vsI-CMyGeFO8G0i8=s2048" alt="Failed to load the image"/>
+                <div id="OverlayHeaderText">
+                    <p id="OverlayHeaderName">Project Name</p>
+                    <p id="OverlayHeaderSummary">Project Summary</p>
+                    <div id="OverlayHeaderLinks">
+                        <div class="OverlayHeaderLink">
+                            <img src="https://lh3.googleusercontent.com/pw/ABLVV87gaKChGKtxzE6fGYlwmSnQEdbRNL2b7XVWgQx-CLGItpWDKJjFce-216ihRsgCliYWEIKJJSm13gOBZYcCGv-SqlU-AtAVyl6HUKB0yEZtHx93aslz7P5I722801G5lvQ6H0j3vsI-CMyGeFO8G0i8=s2048" alt="Failed to load the image"/>
+                            <p>GitHub</p>
+                        </div>
+                        <p>Itch</p>
+                    </div>
+                </div>
+            </div>
+            <div id="OverlayBody">
+                <p id="OverlayDescription">fdsafdsafdsa<br/>fdjsaiokfjiodsa</p>
+                <div id="OverlayGallery">
+                    
+                </div>
+                <iframe id="OverlayVideo" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+            </div>
         </div>
     </div>
     <div id="ErrorOverlay" class="Overlay" onclick="location.reload(true)">
