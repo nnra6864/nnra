@@ -1,13 +1,14 @@
 class DataContainer{
     constructor(data) {
-        this.name = data && data.Name || '';
-        this.summary = data && data.Summary || '';
-        this.description = data && data.Description || '';
-
+        this.name = data && 'Name' in data ? data.Name : '';
+        this.summary = data && 'Summary' in data ? data.Summary : '';
+        this.description = data && 'Description' in data ? data.Description : '';
+        
         this.links = {};
         for (const key in data)
             if (data.hasOwnProperty(key) && key !== 'Name' && key !== 'Summary' && key !== 'Description')
                 this.links[key] = data[key];
+        if (this.links('YouTube')) this.links['YouTubeWatch'] = data.links['YouTube'].replace("/embed/", "/watch?v=");
     }
 }
 
@@ -87,6 +88,7 @@ function handleData(data, list){
     });
     newGridImageContainer.appendChild(newImage);
     imageContainer.appendChild(newGridImageContainer);
+    console.log(newImage.dataContainer);
 }
 
 async function displayPage(i){

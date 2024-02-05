@@ -2,19 +2,37 @@
   {
     "Name": "Name",
     "Summary": "Summary",
-    "Description": "Description\nWith\nLines",
     "Image": "https://lh3.googleusercontent.com/pw/ABLVV87gaKChGKtxzE6fGYlwmSnQEdbRNL2b7XVWgQx-CLGItpWDKJjFce-216ihRsgCliYWEIKJJSm13gOBZYcCGv-SqlU-AtAVyl6HUKB0yEZtHx93aslz7P5I722801G5lvQ6H0j3vsI-CMyGeFO8G0i8=s2048",
-    "YouTube": "https://www.youtube.com/watch?v=v5MyKzoEvm0",
-    "GitHub": "https://github.com/nnra6864/ChronoScape",
-    "Itch": "https://nnra.itch.io/chronoscape"
-  },
-  {
-    "Name": "Name",
-    "Summary": "Summary",
-    "Description": "Description\nWith\nLines",
-    "Image": "https://lh3.googleusercontent.com/pw/ABLVV87gaKChGKtxzE6fGYlwmSnQEdbRNL2b7XVWgQx-CLGItpWDKJjFce-216ihRsgCliYWEIKJJSm13gOBZYcCGv-SqlU-AtAVyl6HUKB0yEZtHx93aslz7P5I722801G5lvQ6H0j3vsI-CMyGeFO8G0i8=s2048",
-    "YouTube": "https://www.youtube.com/watch?v=v5MyKzoEvm0",
-    "GitHub": "https://github.com/nnra6864/ChronoScape",
-    "Itch": "https://nnra.itch.io/chronoscape"
+    "Links": [
+      {
+        "Name": "YouTube",
+        "Link": "https://www.youtube.com/watch?v=v5MyKzoEvm0",
+        "Image": "YouTube"
+      },
+      {
+        "Name": "GitHub",
+        "Link": "https://github.com/nnra6864/ChronoScape",
+        "Image": "GitHub"
+      },
+      {
+        "Name": "Itch",
+        "Link": "https://nnra.itch.io/chronoscape",
+        "Image": "Itch"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "First Header"
+      },
+      {
+        "Type": "p",
+        "Content": "Some Rnaodmfsdfklasd\n\nifdhsoafh"
+      },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/v5MyKzoEvm0?si=DWnBiZpFYPgidnDj";
+      }
+    ]
   }
 ]
