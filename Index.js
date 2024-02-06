@@ -1,14 +1,35 @@
+class Link{
+    constructor(name, link, image){
+        this.name = name;
+        this.link = link;
+        this.image = image;
+    }
+}
+
 class DataContainer{
     constructor(data) {
         this.name = data && 'Name' in data ? data.Name : '';
         this.summary = data && 'Summary' in data ? data.Summary : '';
-        this.description = data && 'Description' in data ? data.Description : '';
-        
-        this.links = {};
-        for (const key in data)
-            if (data.hasOwnProperty(key) && key !== 'Name' && key !== 'Summary' && key !== 'Description')
-                this.links[key] = data[key];
-        if (this.links('YouTube')) this.links['YouTubeWatch'] = data.links['YouTube'].replace("/embed/", "/watch?v=");
+        this.image = data && 'Image' in data ? data.Image : '';
+        this.links = data?.Links?.length > 0
+            ? data.Links.map(link => new Link(link.Name, link.Link, `Images/${link.Image}`)) : [];
+        this.description = data?.Description?.length > 0
+            ? data.Description.map(element => this.getDescriptionElement(element)) : [];
+    }
+    
+    getDescriptionElement(element){
+        switch (element.Type) {
+            case "h":
+                return `<h1 class="OverlayDescriptionHeader">${element.Content}</h1>`;
+            case "p":
+                return `<p class="OverlayDescriptionParagraph">${element.Content}</p>`;
+            case "i":
+                return `<img class="OverlayDescriptionImage" src="${element.Content}" alt="Failed to load the image.">`
+            case "y":
+                return `<iframe class="OverlayDescriptionEmbed" src="${element.Content}" allowfullscreen alt="Failed to load the video."
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+                </iframe>`
+        }
     }
 }
 
@@ -58,7 +79,7 @@ async function loadPage(){
 
 async function loadData(jsonFile, list){
     const response = await fetch(jsonFile);
-    if (!response.ok) { showErrorOverlay(); throw new Error("Failed to Fetch Data!"); }
+    if (!response.ok) { showErrorOverlay(); throw new Error("Failed to fetch data!"); }
     
     let jsonData;
     try { jsonData = await response.json(); }
@@ -80,7 +101,7 @@ function handleData(data, list){
     
     newGridImageContainer.classList.add('GridImageContainer');
     newImage.classList.add('GridImage', list === projectList ? 'ProjectImage' : 'AssetImage');
-    newImage.src = dataContainer.links['Image'];
+    newImage.src = dataContainer.image;
     newImage.alt = 'Failed to load the image';
     newImage.dataContainer = dataContainer;
     newImage.addEventListener('click', function (){
