@@ -71,6 +71,10 @@ body{
     border-top: none;
 }
 
+#Header.Loaded{
+    transition: none;
+}
+
 .HeaderButton{
     cursor: pointer;
 }
@@ -94,6 +98,10 @@ body{
 
 #Content.ShowPages{
     transform: translateY(-100vh);
+}
+
+#Content.Loaded{
+    transition: none;
 }
 
 #LoadingPage{
@@ -140,8 +148,15 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    transition: transform 0.75s var(--Expo);
     column-gap: var(--PageOffset);
+}
+
+#Pages.NoTransition{
+    transition: none;
+}
+
+#Pages.Transition{
+    transition: transform 0.75s var(--Expo);
 }
 
 .PageContainer{

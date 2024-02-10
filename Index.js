@@ -52,25 +52,32 @@ async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function execAfter(func, ms){
+    await delay(ms);
+    func();
+}
+
 async function loadPage(){
-    await loadData('/Data/Projects.json', projectList);
-    await loadData('/Data/Assets.json', assetList);
-    await delay(50);
     let loadingContainer = document.getElementById('LoadingContainer');
     loadingContainer.classList.add('Load');
+    
+    await loadData('/Data/Projects.json', projectList);
+    await loadData('/Data/Assets.json', assetList);
 
     await delay(3000);
     let content = document.getElementById('Content');
     content.classList.add('ShowPages');
+    execAfter(() => content.classList.add('Loaded'), 1100);
+    execAfter(() => loadingContainer.classList.add('Unload'), 1000);
+    
     await delay(175);
     let header = document.getElementById('Header');
     header.classList.add('Load');
+    execAfter(() => header.classList.add('Loaded'), 1100);
     let pageContainers = document.getElementsByClassName('PageContainer');
     Array.from(pageContainers).forEach(element => {element.classList.add('Load')});
-
-    //Has to be a total of 1000ms before this
+    
     await delay(1000);
-    loadingContainer.classList.add('Unload');
     let headerButtons = document.getElementsByClassName('HeaderButton');
     Array.from(headerButtons).forEach(element => {element.classList.add('Loaded')});
     
@@ -115,9 +122,12 @@ function handleData(data, list){
 async function displayPage(i){
     if (!hasLoaded || isSwitching) return;
     isSwitching = true;
+    pages.classList.remove("NoTransition");
+    pages.classList.add("Transition");
     pages.style.transform = `translateX(${i === 0 ? 100 : i === 1 ? 0 : -100}vw)`;
     await delay(500);
     isSwitching = false;
+    execAfter(() => { if (isSwitching) return; pages.classList.remove("Transition"); pages.classList.add("NoTransition"); }, 550);
     let images = [];
     if (i === 0 && !transitionedProjects) { images = document.getElementsByClassName("ProjectImage"); transitionedProjects = true; }
     else if (i === 2 && ! transitionedAssets) { images = document.getElementsByClassName("AssetImage");  transitionedAssets = true; }
