@@ -169,10 +169,11 @@ async function toggleOverlay(shown, data){
     execAfter(() => overlayTransitioning = false, 510)
     if (!shown) { overlay.classList.remove('Shown'); return; }
     overlay.classList.add('Shown');
-    showOverlayData(data);
+    clearOverlayData();
+    loadOverlayData(data);
 }
 
-async function showOverlayData(data){
+async function loadOverlayData(data){
     overlayHeaderImage.src = data.image;
     overlayHeaderName.textContent = data.name;
     overlayHeaderSummary.textContent = data.summary;
@@ -193,6 +194,14 @@ async function showOverlayData(data){
         overlayDescription.appendChild(el);
     });
     
+}
+
+function clearOverlayData(){
+    overlayHeaderImage.src = '';
+    overlayHeaderName.textContent = '';
+    overlayHeaderSummary.textContent = '';
+    while(overlayHeaderLinks.childElementCount > 0) overlayHeaderLinks.removeChild(overlayHeaderLinks.firstChild);
+    while (overlayDescription.childElementCount > 0) overlayDescription.removeChild(overlayDescription.firstChild);
 }
 
 function showErrorOverlay(){
