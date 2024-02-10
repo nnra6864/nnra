@@ -286,6 +286,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     width: fit-content;
     height: 90%;
     border: 2px solid var(--NordBlue4);
@@ -374,7 +375,9 @@ body{
     height: inherit;
 }
 
-#OverlayBody{
+#OverlayDescription{
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    max-width: inherit;
 }

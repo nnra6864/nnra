@@ -12,7 +12,7 @@ class DataContainer{
         this.summary = data && 'Summary' in data ? data.Summary : '';
         this.image = data && 'Image' in data ? data.Image : '';
         this.links = data?.Links?.length > 0
-            ? data.Links.map(link => new Link(link.Name, link.Link, `Images/${link.Image}`)) : [];
+            ? data.Links.map(link => new Link(link.Name, link.Link, `Images/${link.Image}.png`)) : [];
         this.description = data?.Description?.length > 0
             ? data.Description.map(element => this.getDescriptionElement(element)) : [];
     }
@@ -20,15 +20,29 @@ class DataContainer{
     getDescriptionElement(element){
         switch (element.Type) {
             case "h":
-                return `<h1 class="OverlayDescriptionHeader">${element.Content}</h1>`;
+                const header = document.createElement('h1');
+                header.classList.add('OverlayDescriptionHeader');
+                header.textContent = element.Content;
+                return header;
             case "p":
-                return `<p class="OverlayDescriptionParagraph">${element.Content}</p>`;
+                const paragraph = document.createElement('p');
+                paragraph.classList.add('OverlayDescriptionParagraph');
+                paragraph.textContent = element.Content;
+                return paragraph;
             case "i":
-                return `<img class="OverlayDescriptionImage" src="${element.Content}" alt="Failed to load the image.">`
+                const img = document.createElement('img');
+                img.classList.add('OverlayDescriptionImage');
+                img.src = element.Content;
+                img.alt = "Failed to load the image.";
+                return img;
             case "y":
-                return `<iframe class="OverlayDescriptionEmbed" src="${element.Content}" allowfullscreen alt="Failed to load the video."
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-                </iframe>`
+                const iframe = document.createElement('iframe');
+                iframe.classList.add('OverlayDescriptionEmbed');
+                iframe.src = element.Content;
+                iframe.allowFullscreen = true;
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                iframe.alt = "Failed to load the video.";
+                return iframe;
         }
     }
 }
@@ -37,14 +51,21 @@ let pages = document.getElementById('Pages');
 let overlay = document.getElementById("Overlay");
 let projectImages = document.getElementById("ProjectImages");
 let assetImages = document.getElementById("AssetImages");
-let errorOverlay = document.getElementById("ErrorOverlay");
 let hasLoaded = false;
 let isSwitching = false;
-let overlayTransitioning = false;
+
 const projectList = [];
 const assetList = [];
 let loadedProjects = false, loadedAssets = false;
 let transitionedProjects = false, transitionedAssets = false;
+
+let overlayHeaderImage = document.getElementById("OverlayHeaderImage");
+let overlayHeaderName = document.getElementById("OverlayHeaderName");
+let overlayHeaderSummary = document.getElementById("OverlayHeaderSummary");
+let overlayHeaderLinks = document.getElementById("OverlayHeaderLinks");
+let overlayDescription = document.getElementById("OverlayDescription");
+let errorOverlay = document.getElementById("ErrorOverlay");
+let overlayTransitioning = false;
 
 document.addEventListener('DOMContentLoaded', loadPage);
 
@@ -116,7 +137,6 @@ function handleData(data, list){
     });
     newGridImageContainer.appendChild(newImage);
     imageContainer.appendChild(newGridImageContainer);
-    console.log(newImage.dataContainer);
 }
 
 async function displayPage(i){
@@ -146,10 +166,33 @@ async function loadGridImage(image){
 async function toggleOverlay(shown, data){
     if (overlayTransitioning) return;
     overlayTransitioning = true;
-    if (shown) overlay.classList.add('Shown');
-    else overlay.classList.remove('Shown');
-    await delay(500);
-    overlayTransitioning = false;
+    execAfter(() => overlayTransitioning = false, 510)
+    if (!shown) { overlay.classList.remove('Shown'); return; }
+    overlay.classList.add('Shown');
+    showOverlayData(data);
+}
+
+async function showOverlayData(data){
+    overlayHeaderImage.src = data.image;
+    overlayHeaderName.textContent = data.name;
+    overlayHeaderSummary.textContent = data.summary;
+    data.links.forEach(link => {
+        let linkImg = document.createElement('img');
+        linkImg.src = link.image;
+        let linkText = document.createElement('a');
+        linkText.href = link.link;
+        linkText.textContent = link.name;
+        let linkDiv = document.createElement('div');
+        linkDiv.classList.add('OverlayHeaderLink');
+        linkDiv.appendChild(linkImg);
+        linkDiv.appendChild(linkText);
+        overlayHeaderLinks.appendChild(linkDiv);
+        console.log(linkImg.src);
+    });
+    data.description.forEach(el => {
+        overlayDescription.appendChild(el);
+    });
+    
 }
 
 function showErrorOverlay(){
