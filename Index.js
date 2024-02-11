@@ -72,6 +72,7 @@ const assetList = [];
 let loadedProjects = false, loadedAssets = false;
 let transitionedProjects = false, transitionedAssets = false;
 
+let overlayHeader = document.getElementById("OverlayHeader");
 let overlayHeaderImage = document.getElementById("OverlayHeaderImage");
 let overlayHeaderName = document.getElementById("OverlayHeaderName");
 let overlayHeaderSummary = document.getElementById("OverlayHeaderSummary");
@@ -180,10 +181,17 @@ async function toggleOverlay(shown, data){
     if (overlayTransitioning) return;
     overlayTransitioning = true;
     execAfter(() => overlayTransitioning = false, 510)
-    if (!shown) { overlay.classList.remove('Shown'); return; }
+    if (!shown)
+    {
+        overlay.classList.remove('Shown');
+        window.removeEventListener('resize', updateOverlayDescriptionWidth);
+        return;
+    }
     overlay.classList.add('Shown');
     clearOverlayData();
     loadOverlayData(data);
+    updateOverlayDescriptionWidth();
+    window.addEventListener('resize', updateOverlayDescriptionWidth);
 }
 
 async function loadOverlayData(data){
@@ -214,6 +222,10 @@ function clearOverlayData(){
     overlayHeaderSummary.textContent = '';
     while(overlayHeaderLinks.childElementCount > 0) overlayHeaderLinks.removeChild(overlayHeaderLinks.firstChild);
     while (overlayDescription.childElementCount > 0) overlayDescription.removeChild(overlayDescription.firstChild);
+}
+
+function updateOverlayDescriptionWidth(){
+    overlayDescription.style.width = `${overlayHeader.clientWidth}px`;
 }
 
 function showErrorOverlay(){
