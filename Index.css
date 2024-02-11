@@ -344,6 +344,7 @@ body{
     margin-top: 5px;
     height: min(2.25rem, 2.25vw);
     column-gap: 10px;
+    width: inherit;
 }
 
 .OverlayHeaderLink{
@@ -378,7 +379,21 @@ body{
 #OverlayDescription{
     display: flex;
     flex-direction: column;
-    width: fit-content;
-    max-width: inherit;
 }
 
+.OverlayDescriptionItem{
+    display: flex;
+    flex-direction: column;
+}
+
+.OverlayDescriptionHeader{
+    align-self: center;
+}
+
+.OverlayDescriptionParagraph{
+    overflow-wrap: break-word;
+}
+
+.OverlayDescriptionEmbed{
+
+}

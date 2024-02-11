@@ -8,9 +8,9 @@ class Link{
 
 class DataContainer{
     constructor(data) {
-        this.name = data && 'Name' in data ? data.Name : '';
-        this.summary = data && 'Summary' in data ? data.Summary : '';
-        this.image = data && 'Image' in data ? data.Image : '';
+        this.name = data && 'Name' in data ? data.Name : 'Project Name';
+        this.summary = data && 'Summary' in data ? data.Summary : 'Project Summary';
+        this.image = data && 'Image' in data ? data.Image : 'Images/Icon.gif';
         this.links = data?.Links?.length > 0
             ? data.Links.map(link => new Link(link.Name, link.Link, `Images/${link.Image}.png`)) : [];
         this.description = data?.Description?.length > 0
@@ -18,31 +18,44 @@ class DataContainer{
     }
     
     getDescriptionElement(element){
+        const div = document.createElement('div');
+        div.classList.add('OverlayDescriptionItem');
         switch (element.Type) {
             case "h":
                 const header = document.createElement('h1');
                 header.classList.add('OverlayDescriptionHeader');
-                header.textContent = element.Content;
-                return header;
+                header.textContent = element && 'Content' in element ? element.Content : '';
+                div.appendChild(header);
+                return div;
             case "p":
                 const paragraph = document.createElement('p');
                 paragraph.classList.add('OverlayDescriptionParagraph');
-                paragraph.textContent = element.Content;
-                return paragraph;
+                paragraph.textContent = element && 'Content' in element ? element.Content : '';
+                div.appendChild(paragraph);
+                return div;
             case "i":
                 const img = document.createElement('img');
                 img.classList.add('OverlayDescriptionImage');
-                img.src = element.Content;
+                img.src = element && 'Content' in element ? element.Content : '';
                 img.alt = "Failed to load the image.";
-                return img;
+                div.appendChild(img);
+                return div;
             case "y":
                 const iframe = document.createElement('iframe');
                 iframe.classList.add('OverlayDescriptionEmbed');
-                iframe.src = element.Content;
+                iframe.src = element && 'Content' in element ? element.Content : '';
                 iframe.allowFullscreen = true;
                 iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                 iframe.alt = "Failed to load the video.";
-                return iframe;
+                div.appendChild(iframe);
+                return div;
+            case "br":
+                const br = document.createElement('br');
+                br.style.marginBottom = element && 'Size' in element ? element.Size : '10px';
+                div.appendChild(br);
+                return div;
+            default:
+                return null;
         }
     }
 }
@@ -79,12 +92,12 @@ async function execAfter(func, ms){
 }
 
 async function loadPage(){
-    let loadingContainer = document.getElementById('LoadingContainer');
-    loadingContainer.classList.add('Load');
-    
     await loadData('/Data/Projects.json', projectList);
     await loadData('/Data/Assets.json', assetList);
 
+    let loadingContainer = document.getElementById('LoadingContainer');
+    loadingContainer.classList.add('Load');
+    
     await delay(3000);
     let content = document.getElementById('Content');
     content.classList.add('ShowPages');
@@ -193,7 +206,6 @@ async function loadOverlayData(data){
     data.description.forEach(el => {
         overlayDescription.appendChild(el);
     });
-    
 }
 
 function clearOverlayData(){
