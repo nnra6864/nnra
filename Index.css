@@ -188,10 +188,10 @@ body{
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 40px 20px;
     scroll-padding-top: 20px;
     scroll-padding-bottom: 20px;
+    border-radius: 20px;
 }
 
 .ImageGrid{
@@ -200,7 +200,7 @@ body{
     grid-auto-flow: dense;
     align-items: flex-start;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(64px, min(20%, 512px)));
+    grid-template-columns: repeat(auto-fill, minmax(128px, min(15%, 512px)));
     grid-auto-rows: max-content;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
