@@ -30,7 +30,11 @@
       },
       {
         "Type": "p",
-        "Content": "Some Rnaodmfsdfklasdifdhsoafhfdsjaikofjposdajkfopdsajfdsajfdsjkakflpj'sdaflsdp;akfl;'akg;lfdskal;gsdka;lfksdal;gkl;gf;dskgl;fdksgjhkllllllljhkljlhkjhlikjlhkjhkljhklljhkjhlkjhlkjhklhljjhlkljhkjhklhkljjhklhkljkljhjhkljkhlgklsdfj;lvnjioauv98na34pn79wu8nf98pvun9v84weua89nuvnp3890nu890vpuwdfu889nv034n7awup09u98777777777777777778687894rquiojhdsaob8cb893"
+        "Content": "Some Rnaodmfsdfklasdifdhsoafhfdsjaikofjposdajkfopdsajfdsajfdsjkakflpj'sdaflsdp;akfl;'akg;lfdskal;gsdka;lfksdal;gkl;gf;dskgl;fdksgjhkllllllljhkljlhkjhlikjlhkjhkljhklljhkjhlkjhlkjhklhljjhlkljhkjhklhkljjhklhkljkljhjhkljkhlgklsdfj;lvnjioauv98na34pn79wu8nf98pvun9v84weua89nuvnp3890nu890vpuwdfu889nv034n7awup09u98777777777777777778687894rquiojhdsaob8cb893",
+        "Styles": {
+          "font-size": "2rem",
+          "color": "var(--NordBlue2)"
+        }
       },
       {
         "Type": "y",

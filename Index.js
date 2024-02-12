@@ -24,34 +24,44 @@ class DataContainer{
             case "h":
                 const header = document.createElement('h1');
                 header.classList.add('OverlayDescriptionHeader');
-                header.textContent = element && 'Content' in element ? element.Content : '';
+                header.textContent = 'Content' in element ? element.Content : '';
+                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
+                    header.style[property.toLowerCase()] = value);
                 div.appendChild(header);
                 return div;
             case "p":
                 const paragraph = document.createElement('p');
                 paragraph.classList.add('OverlayDescriptionParagraph');
-                paragraph.textContent = element && 'Content' in element ? element.Content : '';
+                paragraph.textContent = 'Content' in element ? element.Content : '';
+                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
+                    paragraph.style[property.toLowerCase()] = value);
                 div.appendChild(paragraph);
                 return div;
             case "i":
                 const img = document.createElement('img');
                 img.classList.add('OverlayDescriptionImage');
-                img.src = element && 'Content' in element ? element.Content : '';
+                img.src = 'Content' in element ? element.Content : '';
                 img.alt = "Failed to load the image.";
+                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
+                    img.style[property.toLowerCase()] = value);
                 div.appendChild(img);
                 return div;
             case "y":
                 const iframe = document.createElement('iframe');
                 iframe.classList.add('OverlayDescriptionEmbed');
-                iframe.src = element && 'Content' in element ? element.Content : '';
+                iframe.src = 'Content' in element ? element.Content : '';
                 iframe.allowFullscreen = true;
                 iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                 iframe.alt = "Failed to load the video.";
+                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
+                    iframe.style[property.toLowerCase()] = value);
                 div.appendChild(iframe);
                 return div;
             case "br":
                 const br = document.createElement('br');
-                br.style.marginBottom = element && 'Size' in element ? element.Size : '10px';
+                br.style.marginBottom = 'Size' in element ? element.Size : '10px';
+                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
+                    br.style[property.toLowerCase()] = value);
                 div.appendChild(br);
                 return div;
             default:
