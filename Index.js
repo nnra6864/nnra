@@ -1,18 +1,29 @@
-class Link{
-    constructor(name, link, image){
-        this.name = name;
-        this.link = link;
-        this.image = image;
-    }
-}
-
 class DataContainer{
     constructor(data) {
-        this.name = data && 'Name' in data ? data.Name : 'Project Name';
-        this.summary = data && 'Summary' in data ? data.Summary : 'Project Summary';
-        this.image = data && 'Image' in data ? data.Image : 'Images/Icon.gif';
+        if (!data) return;
+        if ('Name' in data){
+            const name = document.createElement('p');
+            name.innerHTML = 'Content' in data.Name ? data.Name.Content : '';
+            name.classList.add('OverlayHeaderName');
+            this.applyStyles(name, data.Name);
+            this.name = name;
+        }
+        if ('Summary' in data){
+            const sum = document.createElement('p');
+            sum.innerHTML = 'Content' in data.Summary ? data.Summary.Content : '';
+            sum.classList.add('OverlayHeaderSummary');
+            this.applyStyles(sum, data.Summary);
+            this.summary = sum;
+        }
+        if ('Image' in data){
+            const img = document.createElement('img');
+            img.src = 'Content' in data.Image ? data.Image.Content : '';
+            img.classList.add('OverlayHeaderImage');
+            this.applyStyles(img, data.Image);
+            this.image = img;
+        }
         this.links = data?.Links?.length > 0
-            ? data.Links.map(link => new Link(link.Name, link.Link, `Images/${link.Image}.png`)) : [];
+            ? data.Links.map(element => this.getLinkElement(element)) : [];
         this.description = data?.Description?.length > 0
             ? data.Description.map(element => this.getDescriptionElement(element)) : [];
     }
@@ -24,17 +35,15 @@ class DataContainer{
             case "h":
                 const header = document.createElement('h1');
                 header.classList.add('OverlayDescriptionHeader');
-                header.textContent = 'Content' in element ? element.Content : '';
-                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
-                    header.style[property.toLowerCase()] = value);
+                header.innerHTML = 'Content' in element ? element.Content : '';
+                this.applyStyles(header, element)
                 div.appendChild(header);
                 return div;
             case "p":
                 const paragraph = document.createElement('p');
                 paragraph.classList.add('OverlayDescriptionParagraph');
-                paragraph.textContent = 'Content' in element ? element.Content : '';
-                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
-                    paragraph.style[property.toLowerCase()] = value);
+                paragraph.innerHTML = element.hasOwnProperty('Content') ? element.Content.join('<br>') : '';
+                this.applyStyles(paragraph, element)
                 div.appendChild(paragraph);
                 return div;
             case "i":
@@ -42,8 +51,7 @@ class DataContainer{
                 img.classList.add('OverlayDescriptionImage');
                 img.src = 'Content' in element ? element.Content : '';
                 img.alt = "Failed to load the image.";
-                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
-                    img.style[property.toLowerCase()] = value);
+                this.applyStyles(img, element)
                 div.appendChild(img);
                 return div;
             case "y":
@@ -53,20 +61,36 @@ class DataContainer{
                 iframe.allowFullscreen = true;
                 iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                 iframe.alt = "Failed to load the video.";
-                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
-                    iframe.style[property.toLowerCase()] = value);
+                this.applyStyles(iframe, element)
                 div.appendChild(iframe);
                 return div;
-            case "br":
-                const br = document.createElement('br');
-                br.style.marginBottom = 'Size' in element ? element.Size : '10px';
-                'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
-                    br.style[property.toLowerCase()] = value);
-                div.appendChild(br);
+            case "s":
+                const s = document.createElement('div');
+                s.classList.add('OverlayDescriptionSpace');
+                this.applyStyles(s, element)
+                div.appendChild(s);
                 return div;
             default:
                 return null;
         }
+    }
+    
+    getLinkElement(element) {
+        let linkImg = document.createElement('img');
+        linkImg.src = `Images/${element.Image}.png`;
+        let linkText = document.createElement('a');
+        linkText.href = element.Link;
+        linkText.textContent = element.Text;
+        let linkDiv = document.createElement('div');
+        linkDiv.classList.add('OverlayHeaderLink');
+        linkDiv.appendChild(linkImg);
+        linkDiv.appendChild(linkText);
+        return linkDiv;
+    }
+    
+    applyStyles(htmlElement, element){
+        'Styles' in element && Object.entries(element.Styles).forEach(([property, value]) =>
+            htmlElement.style[property.toLowerCase()] = value);
     }
 }
 
@@ -83,9 +107,9 @@ let loadedProjects = false, loadedAssets = false;
 let transitionedProjects = false, transitionedAssets = false;
 
 let overlayHeader = document.getElementById("OverlayHeader");
-let overlayHeaderImage = document.getElementById("OverlayHeaderImage");
-let overlayHeaderName = document.getElementById("OverlayHeaderName");
-let overlayHeaderSummary = document.getElementById("OverlayHeaderSummary");
+let overlayHeaderNameContainer = document.getElementById("OverlayHeaderNameContainer");
+let overlayHeaderSummaryContainer = document.getElementById("OverlayHeaderSummaryContainer");
+let overlayHeaderImageContainer = document.getElementById("OverlayHeaderImageContainer");
 let overlayHeaderLinks = document.getElementById("OverlayHeaderLinks");
 let overlayDescription = document.getElementById("OverlayDescription");
 let errorOverlay = document.getElementById("ErrorOverlay");
@@ -100,6 +124,10 @@ async function delay(ms) {
 async function execAfter(func, ms){
     await delay(ms);
     func();
+}
+
+function clearChildElements(element){
+    while (element.childElementCount > 0) element.removeChild(element.firstChild);
 }
 
 async function loadPage(){
@@ -153,7 +181,7 @@ function handleData(data, list){
     
     newGridImageContainer.classList.add('GridImageContainer');
     newImage.classList.add('GridImage', list === projectList ? 'ProjectImage' : 'AssetImage');
-    newImage.src = dataContainer.image;
+    newImage.src = dataContainer.image.src;
     newImage.alt = 'Failed to load the image';
     newImage.dataContainer = dataContainer;
     newImage.addEventListener('click', function (){
@@ -205,21 +233,11 @@ async function toggleOverlay(shown, data){
 }
 
 async function loadOverlayData(data){
-    overlayHeaderImage.src = data.image;
-    overlayHeaderName.textContent = data.name;
-    overlayHeaderSummary.textContent = data.summary;
-    data.links.forEach(link => {
-        let linkImg = document.createElement('img');
-        linkImg.src = link.image;
-        let linkText = document.createElement('a');
-        linkText.href = link.link;
-        linkText.textContent = link.name;
-        let linkDiv = document.createElement('div');
-        linkDiv.classList.add('OverlayHeaderLink');
-        linkDiv.appendChild(linkImg);
-        linkDiv.appendChild(linkText);
-        overlayHeaderLinks.appendChild(linkDiv);
-        console.log(linkImg.src);
+    overlayHeaderImageContainer.appendChild(data.image);
+    overlayHeaderNameContainer.appendChild(data.name);
+    overlayHeaderSummaryContainer.appendChild(data.summary);
+    data.links.forEach(l => {
+        overlayHeaderLinks.appendChild(l);
     });
     data.description.forEach(el => {
         overlayDescription.appendChild(el);
@@ -227,11 +245,11 @@ async function loadOverlayData(data){
 }
 
 function clearOverlayData(){
-    overlayHeaderImage.src = '';
-    overlayHeaderName.textContent = '';
-    overlayHeaderSummary.textContent = '';
-    while(overlayHeaderLinks.childElementCount > 0) overlayHeaderLinks.removeChild(overlayHeaderLinks.firstChild);
-    while (overlayDescription.childElementCount > 0) overlayDescription.removeChild(overlayDescription.firstChild);
+    clearChildElements(overlayHeaderNameContainer);
+    clearChildElements(overlayHeaderSummaryContainer);
+    clearChildElements(overlayHeaderImageContainer);
+    clearChildElements(overlayHeaderLinks);
+    clearChildElements(overlayDescription);
 }
 
 function updateOverlayDescriptionWidth(){

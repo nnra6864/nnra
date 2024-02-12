@@ -291,11 +291,14 @@ body{
     height: 90%;
     border: 2px solid var(--NordBlue4);
     border-radius: 20px;
-    padding: max(25px, 1vw);
+    padding: 50px 25px 50px 25px;
     background-color: var(--NordDark1);
     overflow: scroll;
     scrollbar-width: none;
     pointer-events: inherit;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    scroll-padding: 25px;
 }
 
 #OverlayContent{
@@ -315,11 +318,12 @@ body{
     height: fit-content;
 }
 
-#OverlayHeaderImage{
+.OverlayHeaderImage{
     height: min(15rem, 15vw);
     border: 2px solid var(--NordBlue3);
     border-radius: 10%;
     transition: height 0.5s ease;
+    scroll-snap-align: start;
 }
 
 #OverlayHeaderText{
@@ -328,13 +332,13 @@ body{
     row-gap: 5px;
 }
 
-#OverlayHeaderName{
-    font-size: min(6rem, 5vw);
+.OverlayHeaderName{
+    font-size: min(6rem, 6vw);
     transition: font-size 0.5s ease, color 0.5s ease;
 }
 
-#OverlayHeaderSummary{
-    font-size: min(4rem, 3vw);
+.OverlayHeaderSummary{
+    font-size: min(4rem, 4vw);
     transition: font-size 0.5s ease, color 0.5s ease;
 }
 
@@ -343,7 +347,7 @@ body{
     flex-direction: row;
     margin-top: 5px;
     height: min(2.25rem, 2.25vw);
-    column-gap: 10px;
+    column-gap: 20px;
     width: inherit;
 }
 
@@ -379,21 +383,49 @@ body{
 #OverlayDescription{
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
+}
+
+#OverlayDescription br:after{
+    scroll-snap-align: none;
 }
 
 .OverlayDescriptionItem{
     display: flex;
     flex-direction: column;
+    scroll-snap-align: start;
+    scroll-margin: -15px;
+}
+
+.OverlayDescriptionSpace{
+    margin: 10px;
 }
 
 .OverlayDescriptionHeader{
     align-self: center;
+    font-size: min(4rem, 4vw);
+    color: var(--NordBlue2);
 }
 
 .OverlayDescriptionParagraph{
+    display: flex;
+    flex-direction: column;
     overflow-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: min(2rem, 2vw);
+}
+
+.OverlayDescriptionImage{
+    align-self: center;
+    width: 100%;
+    border: 2px solid var(--NordLight1);
+    border-radius: 1.5rem;
 }
 
 .OverlayDescriptionEmbed{
-
+    width: 100%;
+    aspect-ratio: 16/9;
+    align-self: center;
+    border: 2px solid var(--NordLight1);
+    border-radius: 1.5rem;
 }
