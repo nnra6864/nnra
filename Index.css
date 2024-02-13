@@ -291,14 +291,11 @@ body{
     height: 90%;
     border: 2px solid var(--NordBlue4);
     border-radius: 20px;
-    padding: 50px 25px 50px 25px;
+    padding: 25px;
     background-color: var(--NordDark1);
     overflow: scroll;
     scrollbar-width: none;
     pointer-events: inherit;
-    scroll-snap-type: y mandatory;
-    scroll-snap-stop: always;
-    scroll-padding: 25px;
 }
 
 #OverlayContent{
@@ -323,7 +320,6 @@ body{
     border: 2px solid var(--NordBlue3);
     border-radius: 10%;
     transition: height 0.5s ease;
-    scroll-snap-align: start;
 }
 
 #OverlayHeaderText{
@@ -386,15 +382,9 @@ body{
     margin-top: 10px;
 }
 
-#OverlayDescription br:after{
-    scroll-snap-align: none;
-}
-
 .OverlayDescriptionItem{
     display: flex;
     flex-direction: column;
-    scroll-snap-align: start;
-    scroll-margin-top: -20px;
 }
 
 .OverlayDescriptionSpace{
