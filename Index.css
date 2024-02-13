@@ -64,7 +64,7 @@ body{
 }
 
 #Header.Load{
-    height: 5vh;
+    height: 64px;
     font-size: 2rem;
     box-shadow: 0 0 var(--ContainerShadowSize) var(--ContainerShadowSize) var(--NordDark1);
     border: 2px solid var(--NordBlue4);
@@ -200,7 +200,7 @@ body{
     grid-auto-flow: dense;
     align-items: flex-start;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(128px, min(15%, 512px)));
+    grid-template-columns: repeat(auto-fill, max(128px, min(10%, 256px)));
     grid-auto-rows: max-content;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
