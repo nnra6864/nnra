@@ -57,7 +57,7 @@ class DataContainer{
             case "y":
                 const iframe = document.createElement('iframe');
                 iframe.classList.add('OverlayDescriptionEmbed');
-                iframe.src = 'Content' in element ? element.Content : '';
+                iframe.src = 'Content' in element ? element.Content + '?suggestedQuality=hd1440' : '';
                 iframe.allowFullscreen = true;
                 iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                 iframe.alt = "Failed to load the video.";
@@ -106,6 +106,7 @@ const assetList = [];
 let loadedProjects = false, loadedAssets = false;
 let transitionedProjects = false, transitionedAssets = false;
 
+let overlayContainer = document.getElementById("OverlayContainer");
 let overlayHeader = document.getElementById("OverlayHeader");
 let overlayHeaderNameContainer = document.getElementById("OverlayHeaderNameContainer");
 let overlayHeaderSummaryContainer = document.getElementById("OverlayHeaderSummaryContainer");
@@ -230,6 +231,7 @@ async function toggleOverlay(shown, data){
     loadOverlayData(data);
     updateOverlayDescriptionWidth();
     window.addEventListener('resize', updateOverlayDescriptionWidth);
+    overlayContainer.scrollTop = 0;
 }
 
 async function loadOverlayData(data){

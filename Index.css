@@ -394,7 +394,7 @@ body{
     display: flex;
     flex-direction: column;
     scroll-snap-align: start;
-    scroll-margin: -15px;
+    scroll-margin-top: -20px;
 }
 
 .OverlayDescriptionSpace{
