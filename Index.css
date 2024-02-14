@@ -296,6 +296,7 @@ body{
     overflow: scroll;
     scrollbar-width: none;
     pointer-events: inherit;
+    user-select: text;
 }
 
 #OverlayContent{
@@ -320,6 +321,7 @@ body{
     border: 2px solid var(--NordBlue3);
     border-radius: 10%;
     transition: height 0.5s ease;
+    user-select: none;
 }
 
 #OverlayHeaderText{
@@ -345,6 +347,7 @@ body{
     height: min(2.25rem, 2.25vw);
     column-gap: 20px;
     width: inherit;
+    user-select: none;
 }
 
 .OverlayHeaderLink{
@@ -410,6 +413,7 @@ body{
     width: 100%;
     border: 2px solid var(--NordLight1);
     border-radius: 1.5rem;
+    user-select: none;
 }
 
 .OverlayDescriptionEmbed{
