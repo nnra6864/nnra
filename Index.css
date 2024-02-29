@@ -186,6 +186,11 @@ body{
     user-select: text;
 }
 
+.EnenraCenteredContainer{
+    width: fit-content;
+    align-self: center;
+}
+
 .EnenraContentContainer{
     flex: 1;
     display: flex;
@@ -197,14 +202,9 @@ body{
     scrollbar-width: none;
 }
 
-.EnenraCenteredContainer{
-    width: fit-content;
-    align-self: center;
-}
-
 .EnenraContentContainer h1{
     color: var(--NordBlue3);
-    font-size: max(2rem, min(6rem, 3vw));
+    font-size: max(2rem, min(5rem, 3vw));
     text-align: center;
 }
 
@@ -214,13 +214,28 @@ body{
     text-align: center;
 }
 
+.EnenraContentContainer h3{
+    color: var(--NordBlue1);
+    font-size: max(1rem, min(4rem, 2vw));
+    text-align: center;
+}
+
 .EnenraContentContainer p{
     font-size: max(1rem, min(2rem, 2vw));
 }
 
+.EnenraContentContainer b{
+    color: var(--NordYellow);
+}
+
 .EnenraContentContainer a{
-    color: var(--NordBlue2);
+    color: var(--NordBlue3);
     text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.EnenraContentContainer a:hover{
+    color: var(--NordBlue2);
 }
 
 .EnenraContentContainer ul{
@@ -234,6 +249,13 @@ body{
 .VerticalLine{
     height: 100%;
     background: linear-gradient(to bottom, transparent 0%, #eceff4 50%, transparent 100%);
+}
+
+.HorizontalLine{
+    width: 100%;
+    background: linear-gradient(to right, transparent 0%, #eceff4 50%, transparent 100%);
+    margin: 20px 0;
+    min-height: 1px;
 }
 
 #EnenraExperience{
