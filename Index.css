@@ -238,12 +238,21 @@ body{
     color: var(--NordBlue2);
 }
 
+.EnenraContentContainer a:hover img{
+    filter: brightness(125%);
+}
+
 .EnenraContentContainer ul{
     display: flex;
     flex-direction: column;
     gap: 10px;
     list-style: inside disc;
     font-size: max(1rem, min(2rem, 2vw));
+}
+
+.EnenraContentContainer ul img{
+    height: max(1rem, min(2rem, 2vw));
+    transition: filter 0.25s ease;
 }
 
 .VerticalLine{
@@ -339,7 +348,7 @@ body{
 .GridImage.Loaded:hover{
     scale: 105%;
     border-radius: 2.5%;
-    filter: brightness(110%);
+    filter: brightness(125%);
     box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 10px;
 }
 
