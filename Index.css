@@ -238,6 +238,11 @@ body{
     color: var(--NordBlue2);
 }
 
+.EnenraContentContainer a img{
+    height: max(1rem, min(2rem, 2vw));
+    transition: filter 0.25s ease;
+}
+
 .EnenraContentContainer a:hover img{
     filter: brightness(125%);
 }
@@ -248,11 +253,6 @@ body{
     gap: 10px;
     list-style: inside disc;
     font-size: max(1rem, min(2rem, 2vw));
-}
-
-.EnenraContentContainer ul img{
-    height: max(1rem, min(2rem, 2vw));
-    transition: filter 0.25s ease;
 }
 
 .VerticalLine{
