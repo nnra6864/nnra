@@ -255,6 +255,21 @@ body{
     font-size: max(1rem, min(2rem, 2vw));
 }
 
+.EnenraContentContainer ul li{
+}
+
+.EnenraContentContainer ul ul{
+    margin: 5px 50px;
+}
+
+.EnenraContentContainer iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    align-self: center;
+    border: 2px solid var(--NordLight1);
+    border-radius: 1.5rem;
+}
+
 .VerticalLine{
     height: 100%;
     background: linear-gradient(to bottom, transparent 0%, #eceff4 50%, transparent 100%);
@@ -348,7 +363,7 @@ body{
 .GridImage.Loaded:hover{
     scale: 105%;
     border-radius: 2.5%;
-    filter: brightness(125%);
+    filter: brightness(125%) saturate(125%);
     box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 10px;
 }
 

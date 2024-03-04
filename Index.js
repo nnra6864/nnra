@@ -116,6 +116,9 @@ let overlayDescription = document.getElementById("OverlayDescription");
 let errorOverlay = document.getElementById("ErrorOverlay");
 let overlayTransitioning = false;
 
+const knowledgeTooltip =
+    `<span style="color:var(--NordGreen)">Good</span> - Good knowledge of the language`
+
 document.addEventListener('DOMContentLoaded', loadPage);
 
 async function delay(ms) {
