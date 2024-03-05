@@ -138,9 +138,9 @@ function clearChildElements(element){
 
 async function loadPage(){
     console.log(1);
-    await loadData('/Data/Projects.json', projectList);
+    await loadData('Data/Projects.json', projectList);
     console.log(2);
-    await loadData('/Data/Assets.json', assetList);
+    await loadData('Data/Assets.json', assetList);
     console.log(3);
     applyTooltip(knowledgeTooltipElements, knowledgeTooltip);
     console.log(4);
