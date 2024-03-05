@@ -101,6 +101,11 @@ let assetImages = document.getElementById("AssetImages");
 let hasLoaded = false;
 let isSwitching = false;
 
+let knowledgeTooltipElements = Array.from(document.getElementsByClassName("KnowledgeTooltip"));
+const knowledgeTooltip = 
+`Fluent/Good/Fast - Solid knowledge and ease of use
+Intermediate/Decent - Able to navigate/use it
+Bad/Slow - Never tried or bad at it`
 const projectList = [];
 const assetList = [];
 let loadedProjects = false, loadedAssets = false;
@@ -115,9 +120,6 @@ let overlayHeaderLinks = document.getElementById("OverlayHeaderLinks");
 let overlayDescription = document.getElementById("OverlayDescription");
 let errorOverlay = document.getElementById("ErrorOverlay");
 let overlayTransitioning = false;
-
-const knowledgeTooltip =
-    `<span style="color:var(--NordGreen)">Good</span> - Good knowledge of the language`
 
 document.addEventListener('DOMContentLoaded', loadPage);
 
@@ -137,7 +139,8 @@ function clearChildElements(element){
 async function loadPage(){
     await loadData('/Data/Projects.json', projectList);
     await loadData('/Data/Assets.json', assetList);
-
+    applyTooltip(knowledgeTooltipElements, knowledgeTooltip);
+    
     let loadingContainer = document.getElementById('LoadingContainer');
     loadingContainer.classList.add('Load');
     
@@ -263,4 +266,11 @@ function updateOverlayDescriptionWidth(){
 
 function showErrorOverlay(){
     errorOverlay.classList.add('Shown');
+}
+
+function applyTooltip(elements, tooltip){
+    if (elements.length < 1) return;
+    elements.forEach(el => {
+       el.title = tooltip; 
+    });
 }
