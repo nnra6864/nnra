@@ -137,13 +137,18 @@ function clearChildElements(element){
 }
 
 async function loadPage(){
+    console.log(1);
     await loadData('/Data/Projects.json', projectList);
+    console.log(2);
     await loadData('/Data/Assets.json', assetList);
+    console.log(3);
     applyTooltip(knowledgeTooltipElements, knowledgeTooltip);
+    console.log(4);
     
     let loadingContainer = document.getElementById('LoadingContainer');
     loadingContainer.classList.add('Load');
-    
+
+    console.log(5);
     await delay(3000);
     let content = document.getElementById('Content');
     content.classList.add('ShowPages');
