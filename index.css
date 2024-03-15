@@ -75,8 +75,13 @@ body{
     transition: none;
 }
 
+.HeaderButtonContainer{
+    width: 25vh;
+}
+
 .HeaderButton{
     cursor: pointer;
+    text-align: center;
 }
 
 .HeaderButton.Loaded{
