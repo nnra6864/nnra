@@ -75,6 +75,16 @@ body{
     transition: none;
 }
 
+.HeaderOverlayShadow{
+    position: absolute;
+    width: calc(100vw - var(--PageOffset) - 3px);
+    height: inherit;
+    border-radius: inherit;
+    box-shadow: inset 0 -3px 25px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 1000;
+}
+
 .HeaderButtonContainer{
     width: 25vh;
 }
@@ -181,6 +191,16 @@ body{
 .PageContainer.Load{
     background-color: var(--NordDark1);
     box-shadow: 0 0 var(--ContainerShadowSize) var(--ContainerShadowSize) var(--NordDark1);
+}
+
+.PageOverlayShadow{
+    position: absolute;
+    width: calc(100vw - var(--PageOffset) - 3px);
+    height: calc(92.5vh - var(--PageOffset) - 3px);
+    border-radius: inherit;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 1000;
 }
 
 #EnenraContainer{
