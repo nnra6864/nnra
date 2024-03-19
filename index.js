@@ -123,6 +123,12 @@ let overlayTransitioning = false;
 
 document.addEventListener('DOMContentLoaded', loadPage);
 
+document.addEventListener('keydown', function(event) {
+    if (event.keyCode === 9) { // Key code for tab key is 9
+        event.preventDefault(); // Prevent default tab behavior
+    }
+});
+
 async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
