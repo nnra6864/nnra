@@ -289,13 +289,18 @@ body{
     margin: 5px 50px;
 }
 
-.EnenraContentContainer iframe {
+.EnenraContentContainer iframe{
     width: 100%;
     aspect-ratio: 16/9;
     align-self: center;
     border: 2px solid var(--NordLight1);
     border-radius: 1.5rem;
     box-shadow: 0 0 5px var(--NordLight3);
+    transition: box-shadow 0.25s ease;
+}
+
+.EnenraContentContainer iframe:hover{
+    box-shadow: 0 0 10px var(--NordLight3);
 }
 
 .VerticalLine{
@@ -320,9 +325,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 2.5%;
 }
 
-.SearchBar input{
+.SearchBar input, select{
     width: 15%;
     height: 75%;
     background-color: var(--NordDark2);
@@ -331,10 +337,17 @@ body{
     border-radius: 20px;
     border: var(--NordDark4) solid 2px;
     outline: none !important;
+    transition: border-color 0.5s ease, border-radius 0.5s ease;
 }
 
-.SearchBar input:focus{
+.SearchBar input:focus, select:focus{
     border-color: var(--NordLight1);
+    border-radius: 15px;
+}
+
+.MultiSelect{
+    width: 15%;
+    height: 75%;
 }
 
 .ScrollableContainer{

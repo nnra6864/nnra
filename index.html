@@ -24,7 +24,12 @@
             <div class="PageContainer" id="ProjectsContainer">
                 <div class="PageOverlayShadow"></div>
                 <div class="SearchBar">
-                    <input type="text" placeholder="Project Name">
+                    <input type="text" placeholder="Project Name" oninput="SearchProjects">
+                    <select name="Type">
+                        <option value="Game">Game</option>
+                        <option value="Edit">Edit</option>
+                        <option value="Unity Asset">Unity Asset</option>
+                    </select>
                 </div>
                 <div class="ScrollableContainer">
                     <div id="ProjectImages" class="ImageGrid">
