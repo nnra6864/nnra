@@ -106,8 +106,8 @@ const knowledgeTooltip =
 Intermediate/Decent - Able to navigate/use it
 Bad/Slow - Never tried or bad at it`
 const projectList = [];
-let loadedProjects = false, loadedAssets = false;
-let transitionedProjects = false, transitionedAssets = false;
+let loadedProjects = false, loadedPosts = false;
+let transitionedProjects = false, transitionedPosts = false;
 
 let overlayContainer = document.getElementById("OverlayContainer");
 let overlayHeader = document.getElementById("OverlayHeader");
@@ -192,8 +192,7 @@ async function loadData(jsonFile, list){
     for (const data of jsonData)
         handleData(data, list);
     
-    if (list === projectList) loadedProjects = true;
-    else loadedAssets = true;
+    loadedProjects = true;
 }
 
 function handleData(data, list){
@@ -225,7 +224,6 @@ async function displayPage(i){
     execAfter(() => { if (isSwitching) return; pages.classList.remove("Transition"); pages.classList.add("NoTransition"); }, 550);
     let images = [];
     if (i === 0 && !transitionedProjects) { images = document.getElementsByClassName("ProjectImage"); transitionedProjects = true; }
-    else if (i === 2 && ! transitionedAssets) { images = document.getElementsByClassName("AssetImage");  transitionedAssets = true; }
     for (const image of images) {
         loadGridImage(image);
         await delay(100);
