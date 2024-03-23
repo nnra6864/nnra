@@ -97,7 +97,6 @@ class DataContainer{
 let pages = document.getElementById('Pages');
 let overlay = document.getElementById("Overlay");
 let projectImages = document.getElementById("ProjectImages");
-let assetImages = document.getElementById("AssetImages");
 let hasLoaded = false;
 let isSwitching = false;
 
@@ -107,7 +106,6 @@ const knowledgeTooltip =
 Intermediate/Decent - Able to navigate/use it
 Bad/Slow - Never tried or bad at it`
 const projectList = [];
-const assetList = [];
 let loadedProjects = false, loadedAssets = false;
 let transitionedProjects = false, transitionedAssets = false;
 
@@ -143,18 +141,13 @@ function clearChildElements(element){
 }
 
 async function loadPage(){
-    console.log(1);
-    await loadData('Data/Projects.json', projectList);
-    console.log(2);
-    await loadData('Data/Assets.json', assetList);
-    console.log(3);
+    //await loadData('Data/Projects.json', projectList);
+    for (const file of (await loadProjectFiles())) { await loadData(file, projectList); }
     applyTooltip(knowledgeTooltipElements, knowledgeTooltip);
-    console.log(4);
     
     let loadingContainer = document.getElementById('LoadingContainer');
     loadingContainer.classList.add('Load');
 
-    console.log(5);
     await delay(3000);
     let content = document.getElementById('Content');
     content.classList.add('ShowPages');
@@ -175,14 +168,26 @@ async function loadPage(){
     hasLoaded = true;
 }
 
+async function loadProjectFiles(){
+    let index = 0;
+    const files = [];
+    let response;
+    while (true){
+        response = await fetch(`Data/Projects/${index}.json`);
+        if (!response.ok) break;
+        files.push(response);
+        index++;
+    }
+    if (files.length < 1) { showErrorOverlay(); throw new Error("Failed to fetch projects data!"); }
+    files.reverse();
+    return files;
+}
+
 async function loadData(jsonFile, list){
-    const response = await fetch(jsonFile);
-    if (!response.ok) { showErrorOverlay(); throw new Error("Failed to fetch data!"); }
-    
     let jsonData;
-    try { jsonData = await response.json(); }
+    try { jsonData = await jsonFile.json(); }
     catch (error) { showErrorOverlay(); throw new Error(error); }
-    if (!Array.isArray(jsonData) || jsonData.length <= 0) throw new Error("Missing Data!");
+    if (!Array.isArray(jsonData) || jsonData.length <= 0) throw new Error("Missing json data!");
     
     for (const data of jsonData)
         handleData(data, list);
@@ -193,12 +198,12 @@ async function loadData(jsonFile, list){
 
 function handleData(data, list){
     const dataContainer = new DataContainer(data);
-    const imageContainer = list === projectList ? projectImages : assetImages;
+    const imageContainer = projectImages;
     const newGridImageContainer = document.createElement('div');
     const newImage = document.createElement('img');
     
     newGridImageContainer.classList.add('GridImageContainer');
-    newImage.classList.add('GridImage', list === projectList ? 'ProjectImage' : 'AssetImage');
+    newImage.classList.add('GridImage', 'ProjectImage');
     newImage.src = dataContainer.image.src;
     newImage.alt = 'Failed to load the image';
     newImage.dataContainer = dataContainer;

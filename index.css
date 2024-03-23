@@ -19,6 +19,7 @@
     --NordPink: #b48ead;
 
     --Expo: cubic-bezier(0.87, 0, 0.13, 1);
+    --ExpoOut: cubic-bezier(0.16, 1, 0.3, 1);
     --PageOffset: 50px;
     --ContentFontSize: 1.5rem;
     --ContainerShadowSize: 0.5rem;
@@ -176,7 +177,7 @@ body{
 }
 
 #Pages.Transition{
-    transition: transform 0.75s var(--Expo);
+    transition: transform 0.75s var(--ExpoOut);
 }
 
 .PageContainer{
@@ -261,11 +262,11 @@ body{
 .EnenraContentContainer a{
     color: var(--NordBlue3);
     text-decoration: none;
-    transition: color 0.25s ease;
+    transition: text-shadow 0.25s ease;
 }
 
 .EnenraContentContainer a:hover{
-    color: var(--NordBlue2);
+    text-shadow: 0 0 5px var(--NordBlue3);
 }
 
 .EnenraContentContainer a img{
@@ -274,7 +275,7 @@ body{
 }
 
 .EnenraContentContainer a:hover img{
-    filter: brightness(125%);
+    filter: brightness(150%);
 }
 
 .EnenraContentContainer ul{
@@ -343,11 +344,6 @@ body{
 .SearchBar input:focus, select:focus{
     border-color: var(--NordLight1);
     border-radius: 15px;
-}
-
-.MultiSelect{
-    width: 15%;
-    height: 75%;
 }
 
 .ScrollableContainer{
@@ -526,13 +522,20 @@ body{
     height: min(2rem, 2vw);
     font-size: min(2rem, 2vw);
     cursor: pointer;
-    transition: height 0.5s ease, font-size 0.5s ease, color 0.5s ease;
+    transition: height 0.5s ease, font-size 0.5s ease;
+}
+
+.OverlayHeaderLink a{
+    transition: text-shadow 0.5s ease;
 }
 
 .OverlayHeaderLink:hover{
     height: min(2.25rem, 2.25vw);
     font-size: min(2.25rem, 2.25vw);
-    color: var(--NordBlue2);
+}
+
+.OverlayHeaderLink:hover a{
+    text-shadow: 0 0 10px var(--NordLight3);
 }
 
 .OverlayHeaderLink a{
