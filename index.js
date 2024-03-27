@@ -1,27 +1,38 @@
 class DataContainer{
+    data;
+    htmlElement;
     constructor(data) {
         if (!data) return;
+        this.data = data;
         if ('Name' in data){
-            const name = document.createElement('p');
-            name.innerHTML = 'Content' in data.Name ? data.Name.Content : '';
-            name.classList.add('OverlayHeaderName');
-            this.applyStyles(name, data.Name);
+            const name = 'Content' in data.Name ? data.Name.Content : '';
+            const nameElement = document.createElement('p');
+            nameElement.innerHTML = name;
+            nameElement.classList.add('OverlayHeaderName');
+            this.applyStyles(nameElement, data.Name);
             this.name = name;
+            this.nameElement = nameElement;
         }
         if ('Summary' in data){
-            const sum = document.createElement('p');
-            sum.innerHTML = 'Content' in data.Summary ? data.Summary.Content : '';
-            sum.classList.add('OverlayHeaderSummary');
-            this.applyStyles(sum, data.Summary);
+            const sum = 'Content' in data.Summary ? data.Summary.Content : '';
+            const sumElement = document.createElement('p');
+            sumElement.innerHTML = sum;
+            sumElement.classList.add('OverlayHeaderSummary');
+            this.applyStyles(sumElement, data.Summary);
             this.summary = sum;
+            this.summaryElement = sumElement;
         }
         if ('Image' in data){
-            const img = document.createElement('img');
-            img.src = 'Content' in data.Image ? data.Image.Content : '';
-            img.classList.add('OverlayHeaderImage');
-            this.applyStyles(img, data.Image);
+            const img = 'Content' in data.Image ? data.Image.Content : '';
+            const imgElement = document.createElement('img');
+            imgElement.src = img;
+            imgElement.classList.add('OverlayHeaderImage');
+            this.applyStyles(imgElement, data.Image);
             this.image = img;
+            this.imageElement = imgElement;
         }
+        this.type = 'Content' in data.Type ? data.Type.Content : '';
+        console.log(this.type);
         this.links = data?.Links?.length > 0
             ? data.Links.map(element => this.getLinkElement(element)) : [];
         this.description = data?.Description?.length > 0
@@ -105,9 +116,15 @@ const knowledgeTooltip =
 `Fluent/Good/Fast - Solid knowledge and ease of use
 Intermediate/Decent - Able to navigate/use it
 Bad/Slow - Never tried or bad at it`
+
 const projectList = [];
+let displayedProjects = [];
 let loadedProjects = false, loadedPosts = false;
-let transitionedProjects = false, transitionedPosts = false;
+const projectSearch = document.getElementById("ProjectSearch");
+const projectType = document.getElementById("ProjectType")
+const projectSort = document.getElementById("ProjectType")
+let projectsAscending = true;
+let reloadCount = 0;
 
 let overlayContainer = document.getElementById("OverlayContainer");
 let overlayHeader = document.getElementById("OverlayHeader");
@@ -141,8 +158,9 @@ function clearChildElements(element){
 }
 
 async function loadPage(){
-    //await loadData('Data/Projects.json', projectList);
-    for (const file of (await loadProjectFiles())) { await loadData(file, projectList); }
+    for (const file of (await loadProjectFiles())) { await loadData(file); }
+    loadedProjects = true;
+   
     applyTooltip(knowledgeTooltipElements, knowledgeTooltip);
     
     let loadingContainer = document.getElementById('LoadingContainer');
@@ -183,34 +201,64 @@ async function loadProjectFiles(){
     return files;
 }
 
-async function loadData(jsonFile, list){
+async function loadData(jsonFile){
     let jsonData;
     try { jsonData = await jsonFile.json(); }
     catch (error) { showErrorOverlay(); throw new Error(error); }
     if (!Array.isArray(jsonData) || jsonData.length <= 0) throw new Error("Missing json data!");
-    
-    for (const data of jsonData)
-        handleData(data, list);
-    
-    loadedProjects = true;
+    handleData(jsonData[0]);
 }
 
-function handleData(data, list){
-    const dataContainer = new DataContainer(data);
-    const imageContainer = projectImages;
+function handleData(data){
+    const project = new DataContainer(data);
     const newGridImageContainer = document.createElement('div');
     const newImage = document.createElement('img');
     
     newGridImageContainer.classList.add('GridImageContainer');
     newImage.classList.add('GridImage', 'ProjectImage');
-    newImage.src = dataContainer.image.src;
+    newImage.src = project.imageElement.src;
     newImage.alt = 'Failed to load the image';
-    newImage.dataContainer = dataContainer;
+    newImage.dataContainer = project;
     newImage.addEventListener('click', function (){
         toggleOverlay(true, this.dataContainer);
     });
     newGridImageContainer.appendChild(newImage);
-    imageContainer.appendChild(newGridImageContainer);
+    project.htmlElement = newGridImageContainer;
+    projectList.push(project);
+}
+
+function filterProjects(){
+    if (projectSearch.value !== "")
+        displayedProjects = displayedProjects.filter(proj => {
+            console.log(`ProjectName: ${proj.name.toString().toLowerCase()}, Search: ${projectSearch.value.toLowerCase()}`)
+            return proj.name.toLowerCase().includes(projectSearch.value.toLowerCase());
+        });
+    if (projectType.value !== "All")
+        displayedProjects = displayedProjects.filter(proj =>{
+            return proj.type.toLowerCase() === projectType.value.toLowerCase();
+        });
+    if (projectsAscending)
+        displayedProjects.reverse();
+}
+
+async function populateProjects(){
+    const rc = reloadCount;
+    displayedProjects = projectList;
+    filterProjects();
+    
+    projectImages.replaceChildren();
+    for (const proj of displayedProjects) {
+        if (rc !== reloadCount) continue;
+        projectImages.appendChild(proj.htmlElement);
+        unloadGridImage(proj.htmlElement.firstChild);
+        loadGridImage(proj.htmlElement.firstChild);
+        await delay(100);
+    }
+}
+
+function refreshProjects(){
+    reloadCount++;
+    populateProjects();
 }
 
 async function displayPage(i){
@@ -222,18 +270,22 @@ async function displayPage(i){
     await delay(500);
     isSwitching = false;
     execAfter(() => { if (isSwitching) return; pages.classList.remove("Transition"); pages.classList.add("NoTransition"); }, 550);
-    let images = [];
-    if (i === 0 && !transitionedProjects) { images = document.getElementsByClassName("ProjectImage"); transitionedProjects = true; }
-    for (const image of images) {
-        loadGridImage(image);
-        await delay(100);
-    }
+    if (i === 0 && reloadCount === 0) refreshProjects();
+}
+
+function unloadGridImage(image){
+    image.classList.remove("Load");
+    image.classList.remove("Loaded");
 }
 
 async function loadGridImage(image){
-    image.classList.add('Load');
+    const rc = reloadCount;
+    await delay(10);
+    if (rc !== reloadCount) return;
+    image.classList.add("Load");
     await delay(1000);
-    image.classList.add('Loaded');
+    if (rc !== reloadCount) return;
+    image.classList.add("Loaded");
 }
 
 async function toggleOverlay(shown, data){
@@ -255,9 +307,9 @@ async function toggleOverlay(shown, data){
 }
 
 async function loadOverlayData(data){
-    overlayHeaderImageContainer.appendChild(data.image);
-    overlayHeaderNameContainer.appendChild(data.name);
-    overlayHeaderSummaryContainer.appendChild(data.summary);
+    overlayHeaderImageContainer.appendChild(data.imageElement);
+    overlayHeaderNameContainer.appendChild(data.nameElement);
+    overlayHeaderSummaryContainer.appendChild(data.summaryElement);
     data.links.forEach(l => {
         overlayHeaderLinks.appendChild(l);
     });

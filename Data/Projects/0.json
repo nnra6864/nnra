@@ -1,16 +1,16 @@
 [
   {
     "Name": {
-      "Content": "ChronoScape",
-      "Style": {
-        "Color": "blue"
-      }
+      "Content": "ChronoScape"
     },
     "Summary": {
       "Content": "A Flappy Bird remake"
     },
     "Image": {
       "Content": "https://imgur.com/jZzchTh.png"
+    },
+    "Type": {
+      "Content": "Game"
     },
     "Links": [
       {
@@ -39,8 +39,9 @@
       {
         "Type": "p",
         "Content": [
-          "<b><span style='color: var(--NordBlue2)'>Status:</span> <span style='color: var(--NordGreen)'>Finished</span></b>",
-          "<b><span style='color: var(--NordBlue2)'>Development Time:</span> ~3 Weeks</b>"
+          "<b>Type: <span style='color: var(--NordBlue2)'>Game</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue2)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue2)'>~3 Weeks</span></b>"
         ]
       },
       { "Type": "s" },

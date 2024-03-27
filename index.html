@@ -24,15 +24,16 @@
             <div class="PageContainer" id="ProjectsContainer">
                 <div class="PageOverlayShadow"></div>
                 <div class="SearchBar">
-                    <input type="text" placeholder="Project Name" oninput="SearchProjects">
-                    <select name="Type">
-                        <option value="All">All</option>
+                    <!-- <button id="ProjectAscending" onclick="projectsAscending = !projectsAscending; refreshProjects(); this.textContent = this.textContent === '↓' ? '↑' : '↑';">↓</button> -->
+                    <select id="ProjectType" name="Type" onchange="refreshProjects()">
+                        <option value="All" selected>All</option>
                         <option value="Game">Game</option>
                         <option value="Program">Program</option>
                         <option value="Edit">Edit</option>
                         <option value="Model">Model</option>
                         <option value="Asset">Asset</option>
                     </select>
+                    <input id="ProjectSearch" type="text" placeholder="Project Name" oninput="refreshProjects()">
                 </div>
                 <div class="ScrollableContainer">
                     <div id="ProjectImages" class="ImageGrid">
@@ -210,7 +211,7 @@
             </div>
             <div class="PageContainer" id="PostsContainer">
                 <div class="PageOverlayShadow"></div>
-                <h1 style="font-size: 5vw">Coming Soon!</h1>
+                <h1 style="font-size: 5vw;">Coming Soon!</h1>
            </div>
         </div>
     </div>
