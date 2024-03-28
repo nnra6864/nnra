@@ -1,32 +1,22 @@
 [
   {
     "Name": {
-      "Content": "ChronoScape"
+      "Content": "Dior CSGO"
     },
     "Summary": {
-      "Content": "A Flappy Bird remake"
+      "Content": "My first CSGO edit"
     },
     "Image": {
-      "Content": "https://imgur.com/jZzchTh.png"
+      "Content": "https://imgur.com/xLGiFtF.png"
     },
     "Type": {
-      "Content": "Game"
+      "Content": "Video"
     },
     "Links": [
       {
         "Text": "YouTube",
-        "Link": "https://www.youtube.com/watch?v=v5MyKzoEvm0",
+        "Link": "https://www.youtube.com/watch?v=oamu1BbgEdE",
         "Image": "YouTube"
-      },
-      {
-        "Text": "GitHub",
-        "Link": "https://github.com/nnra6864/ChronoScape",
-        "Image": "GitHub"
-      },
-      {
-        "Text": "Itch",
-        "Link": "https://nnra.itch.io/chronoscape",
-        "Image": "Itch"
       }
     ],
     "Description": [
@@ -39,15 +29,17 @@
       {
         "Type": "p",
         "Content": [
-          "<b>Type: <span style='color: var(--NordBlue2)'>Game</span></b>",
+          "<b>Type: <span style='color: var(--NordBlue2)'>Vide</span></b>",
           "<b>Status: <span style='color: var(--NordBlue2)'>Finished</span></b>",
-          "<b>Development Time: <span style='color: var(--NordBlue2)'>~3 Weeks</span></b>"
+          "<b>Development Time: <span style='color: var(--NordBlue2)'>< 1 Week</span></b>"
         ]
       },
       { "Type": "s" },
       {
-        "Type": "i",
-        "Content": "https://imgur.com/jZzchTh.png"
+        "Type": "p",
+        "Content": [
+          "First edit that I gathered clips for using <a href='https://www.skeet.cc'>skeet.cc</a>/gamesense.pub"
+        ]
       },
       { "Type": "s" },
       {
