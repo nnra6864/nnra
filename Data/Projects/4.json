@@ -1,13 +1,13 @@
 [
   {
     "Name": {
-      "Content": "CSGO Dior"
+      "Content": "CSGO Mary Jane"
     },
     "Summary": {
-      "Content": "My first CSGO edit"
+      "Content": "CSGO Edit"
     },
     "Image": {
-      "Content": "https://i.imgur.com/fAzVZdb.jpeg"
+      "Content": "https://i.imgur.com/wiEEOdK.jpeg"
     },
     "Type": {
       "Content": "Video"
@@ -15,12 +15,12 @@
     "Links": [
       {
         "Text": "Video",
-        "Link": "https://www.youtube.com/watch?v=oamu1BbgEdE",
+        "Link": "https://www.youtube.com/watch?v=LOfIALfFr6Y",
         "Image": "YouTube"
       },
       {
         "Text": "Song",
-        "Link": "https://www.youtube.com/watch?v=oorVWW9ywG0",
+        "Link": "https://www.youtube.com/watch?v=jxipIRg-f2Y",
         "Image": "YouTube"
       }
     ],
@@ -46,13 +46,13 @@
       {
         "Type": "p",
         "Content": [
-          "The first CSGO edit that I gathered clips for using <a href='https://www.skeet.cc'>skeet.cc</a>/<a href='https://www.gamesense.pub'>gamesense.pub</a>."
+          "One of my favourite edits I gathered clips for using <a href='https://www.skeet.cc'>skeet.cc</a>/<a href='https://www.gamesense.pub'>gamesense.pub</a>."
         ]
       },
       { "Type": "s" },
       {
         "Type": "y",
-        "Content": "https://www.youtube.com/embed/oamu1BbgEdE?si=1mhaf16Hq5bXrbYw"
+        "Content": "https://www.youtube.com/embed/LOfIALfFr6Y?si=W5RNgEm8RESmCLtr"
       }
     ]
   }

@@ -1,13 +1,13 @@
 [
   {
     "Name": {
-      "Content": "CSGO Dior"
+      "Content": "CSGO Careless"
     },
     "Summary": {
-      "Content": "My first CSGO edit"
+      "Content": "500 subscribers special"
     },
     "Image": {
-      "Content": "https://i.imgur.com/fAzVZdb.jpeg"
+      "Content": "https://i.imgur.com/Cv8Zr5Q.jpeg"
     },
     "Type": {
       "Content": "Video"
@@ -15,12 +15,12 @@
     "Links": [
       {
         "Text": "Video",
-        "Link": "https://www.youtube.com/watch?v=oamu1BbgEdE",
+        "Link": "https://www.youtube.com/watch?v=arOVxNbLp7U",
         "Image": "YouTube"
       },
       {
         "Text": "Song",
-        "Link": "https://www.youtube.com/watch?v=oorVWW9ywG0",
+        "Link": "https://www.youtube.com/watch?v=Nph07D2vEd0",
         "Image": "YouTube"
       }
     ],
@@ -46,13 +46,13 @@
       {
         "Type": "p",
         "Content": [
-          "The first CSGO edit that I gathered clips for using <a href='https://www.skeet.cc'>skeet.cc</a>/<a href='https://www.gamesense.pub'>gamesense.pub</a>."
+          "An edit I made for the milestone of reaching 500 subscribers."
         ]
       },
       { "Type": "s" },
       {
         "Type": "y",
-        "Content": "https://www.youtube.com/embed/oamu1BbgEdE?si=1mhaf16Hq5bXrbYw"
+        "Content": "https://www.youtube.com/embed/arOVxNbLp7U?si=6up5Aep0pF7vL0BC"
       }
     ]
   }

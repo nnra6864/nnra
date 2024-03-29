@@ -403,7 +403,7 @@ body{
 
 .GridImage.Load{
     scale: 100%;
-    border: 2px solid var(--NordBlue3);
+    border: 2px solid var(--NordBlue4);
     border-radius: 5%;
     box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px 5px;
 }
@@ -567,28 +567,8 @@ body{
     margin-top: 10px;
 }
 
-.OverlayDescriptionParagraph{
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.OverlayDescriptionParagraph p{
-    display: inline;
-    width: fit-content;
-    white-space: nowrap;
-}
-
-.OverlayDescriptionParagraph a{
-    display: block;
-    width: fit-content;
-    white-space: nowrap;
-    color: var(--NordBlue3);
-    text-decoration: none;
-    transition: color 0.5s ease;
-}
-
-.OverlayDescriptionParagraph a:hover{
-    color: var(--NordBlue2);
+.OverlayDescriptionItem{
+    display: flex;
 }
 
 .OverlayDescriptionSpace{
@@ -596,17 +576,26 @@ body{
 }
 
 .OverlayDescriptionHeader{
-    align-self: center;
+    width: 100%;
+    text-align: center;
     font-size: min(4rem, 4vw);
     color: var(--NordBlue2);
 }
 
 .OverlayDescriptionParagraph{
-    display: flex;
-    flex-direction: column;
     overflow-wrap: break-word;
     white-space: pre-wrap;
     font-size: min(2rem, 2vw);
+}
+
+.OverlayDescriptionParagraph a{
+    color: var(--NordBlue3);
+    text-decoration: none;
+    transition: text-shadow 0.25s ease;
+}
+
+.OverlayDescriptionParagraph a:hover{
+    text-shadow: 0 0 5px var(--NordBlue3);
 }
 
 .OverlayDescriptionImage{

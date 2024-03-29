@@ -1,13 +1,13 @@
 [
   {
     "Name": {
-      "Content": "CSGO Dior"
+      "Content": "CSGO Flicc"
     },
     "Summary": {
-      "Content": "My first CSGO edit"
+      "Content": "My second CSGO edit"
     },
     "Image": {
-      "Content": "https://i.imgur.com/fAzVZdb.jpeg"
+      "Content": "https://i.imgur.com/a4dYWBs.jpg"
     },
     "Type": {
       "Content": "Video"
@@ -15,12 +15,12 @@
     "Links": [
       {
         "Text": "Video",
-        "Link": "https://www.youtube.com/watch?v=oamu1BbgEdE",
+        "Link": "https://youtu.be/RwG2l9l36Ng",
         "Image": "YouTube"
       },
       {
         "Text": "Song",
-        "Link": "https://www.youtube.com/watch?v=oorVWW9ywG0",
+        "Link": "https://www.youtube.com/watch?v=eyptaazEbHc",
         "Image": "YouTube"
       }
     ],
@@ -46,13 +46,16 @@
       {
         "Type": "p",
         "Content": [
-          "The first CSGO edit that I gathered clips for using <a href='https://www.skeet.cc'>skeet.cc</a>/<a href='https://www.gamesense.pub'>gamesense.pub</a>."
+          "Second edit I made using <a href='https://www.skeet.cc'>skeet.cc</a>/<a href='https://www.gamesense.pub'>gamesense.pub</a>.",
+          "It was possible thanks to lighton.",
+          "He made a script that would increase the m_yaw to an insanely high value.",
+          "We would combine this with the skeet ragebot to hit shots while spinning."
         ]
       },
       { "Type": "s" },
       {
         "Type": "y",
-        "Content": "https://www.youtube.com/embed/oamu1BbgEdE?si=1mhaf16Hq5bXrbYw"
+        "Content": "https://www.youtube.com/embed/RwG2l9l36Ng?si=SefWqzhsxOvBOiFU"
       }
     ]
   }

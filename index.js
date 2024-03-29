@@ -32,7 +32,6 @@ class DataContainer{
             this.imageElement = imgElement;
         }
         this.type = 'Content' in data.Type ? data.Type.Content : '';
-        console.log(this.type);
         this.links = data?.Links?.length > 0
             ? data.Links.map(element => this.getLinkElement(element)) : [];
         this.description = data?.Description?.length > 0
@@ -81,6 +80,12 @@ class DataContainer{
                 this.applyStyles(s, element)
                 div.appendChild(s);
                 return div;
+            case "l":
+                const l = document.createElement('div');
+                l.classList.add('HorizontalLine');
+                this.applyStyles(l, element)
+                div.appendChild(l);
+                return div;
             default:
                 return null;
         }
@@ -122,7 +127,6 @@ let displayedProjects = [];
 let loadedProjects = false, loadedPosts = false;
 const projectSearch = document.getElementById("ProjectSearch");
 const projectType = document.getElementById("ProjectType")
-const projectSort = document.getElementById("ProjectType")
 let projectsAscending = true;
 let reloadCount = 0;
 
@@ -159,6 +163,7 @@ function clearChildElements(element){
 
 async function loadPage(){
     for (const file of (await loadProjectFiles())) { await loadData(file); }
+    projectList.reverse();
     loadedProjects = true;
    
     applyTooltip(knowledgeTooltipElements, knowledgeTooltip);
@@ -228,14 +233,13 @@ function handleData(data){
 }
 
 function filterProjects(){
-    if (projectSearch.value !== "")
-        displayedProjects = displayedProjects.filter(proj => {
-            console.log(`ProjectName: ${proj.name.toString().toLowerCase()}, Search: ${projectSearch.value.toLowerCase()}`)
-            return proj.name.toLowerCase().includes(projectSearch.value.toLowerCase());
-        });
     if (projectType.value !== "All")
         displayedProjects = displayedProjects.filter(proj =>{
             return proj.type.toLowerCase() === projectType.value.toLowerCase();
+        });
+    if (projectSearch.value !== "")
+        displayedProjects = displayedProjects.filter(proj => {
+            return proj.name.toLowerCase().includes(projectSearch.value.toLowerCase());
         });
     if (projectsAscending)
         displayedProjects.reverse();
