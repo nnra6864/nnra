@@ -1,0 +1,59 @@
+[
+  {
+    "Name": {
+      "Content": "CSGO One Taste"
+    },
+    "Summary": {
+      "Content": "CSGO Fragmovie"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/ty3zjh6.jpeg"
+    },
+    "Type": {
+      "Content": "Video"
+    },
+    "Links": [
+      {
+        "Text": "Video",
+        "Link": "https://www.youtube.com/watch?v=OTPF_hho0Ms",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Song",
+        "Link": "https://www.youtube.com/watch?v=G4MxSa0GUvY",
+        "Image": "YouTube"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Video</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Abandoned</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Week</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Skeet, After Effects, Premiere Pro, Photoshop</span></b>"
+        ],
+        "Styles": {
+          "margin": "auto"
+        }
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "Last edit I worked on."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/OTPF_hho0Ms?si=uInAadEEh-BOZj4g"
+      }
+    ]
+  }
+]

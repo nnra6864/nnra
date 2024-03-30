@@ -588,7 +588,12 @@ body{
     font-size: min(2rem, 2vw);
 }
 
+.OverlayDescriptionParagraph p br{
+    margin-top: 100px;
+}
+
 .OverlayDescriptionParagraph a{
+    margin: 0;
     color: var(--NordBlue3);
     text-decoration: none;
     transition: text-shadow 0.25s ease;

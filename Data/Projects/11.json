@@ -4,7 +4,7 @@
       "Content": "CSGO Still Cold"
     },
     "Summary": {
-      "Content": "Skeet Editing Contest Entry"
+      "Content": "Skeet Spotlight Contest Entry"
     },
     "Image": {
       "Content": "https://i.imgur.com/n45xxq3.png"
@@ -19,8 +19,18 @@
         "Image": "YouTube"
       },
       {
+        "Text": "Song",
+        "Link": "https://www.youtube.com/watch?v=wIJWIEWRK_I",
+        "Image": "YouTube"
+      },
+      {
         "Text": "Top 1",
         "Link": "https://www.youtube.com/watch?v=eXnwEXEoJVs",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Top 1 Song",
+        "Link": "https://www.youtube.com/watch?v=--C6CddfpFk",
         "Image": "YouTube"
       },
       {

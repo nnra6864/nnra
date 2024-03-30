@@ -282,7 +282,7 @@ function unloadGridImage(image){
 
 async function loadGridImage(image){
     const rc = reloadCount;
-    await delay(10);
+    await delay(50); //Prevents images from popping in for some reason
     if (rc !== reloadCount) return;
     image.classList.add("Load");
     await delay(1000);
