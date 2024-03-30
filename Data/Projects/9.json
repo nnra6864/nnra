@@ -1,0 +1,54 @@
+[
+  {
+    "Name": {
+      "Content": "Skeet Intro"
+    },
+    "Summary": {
+      "Content": "Intro for skeet.cc/gamesense.pub"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/VgGVSKL.jpeg"
+    },
+    "Type": {
+      "Content": "Video"
+    },
+    "Links": [
+      {
+        "Text": "Video",
+        "Link": "https://www.youtube.com/watch?v=HiAlyioaO7M",
+        "Image": "YouTube"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Video</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>1 Day</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>After Effects</span></b>"
+        ],
+        "Styles": {
+          "margin": "auto"
+        }
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "Intro I made for <a href='https://www.skeet.cc'>skeet.cc</a>/<a href='https://www.gamesense.pub'>gamesense.pub</a>."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/HiAlyioaO7M?si=gpgk18G8RnL52boe"
+      }
+    ]
+  }
+]

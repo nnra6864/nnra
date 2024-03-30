@@ -1,0 +1,83 @@
+[
+  {
+    "Name": {
+      "Content": "CSGO Still Cold"
+    },
+    "Summary": {
+      "Content": "Skeet Editing Contest Entry"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/n45xxq3.png"
+    },
+    "Type": {
+      "Content": "Video"
+    },
+    "Links": [
+      {
+        "Text": "Video",
+        "Link": "https://www.youtube.com/watch?v=aCT1wjrCYIM",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Top 1",
+        "Link": "https://www.youtube.com/watch?v=eXnwEXEoJVs",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Contest",
+        "Link": "https://gamesense.pub/forums/viewtopic.php?id=25650",
+        "Image": "Skeet"
+      },
+      {
+        "Text": "Entry",
+        "Link": "https://gamesense.pub/forums/viewtopic.php?id=25897",
+        "Image": "Skeet"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Video</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Week</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Skeet, After Effects, Premiere Pro, Photoshop</span></b>"
+        ],
+        "Styles": {
+          "margin": "auto"
+        }
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "Easily the best edit I ever made.",
+          "Created for the <a href='https://gamesense.pub/forums/viewtopic.php?id=25650'>2020 Spotlight Contest</a> hosted by <a href='https://www.skeet.cc'>skeet.cc</a>/<a href='https://www.gamesense.pub'>gamesense.pub</a>.",
+          "Didn't get into top 10 but was a fun experience nonetheless."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/aCT1wjrCYIM?si=lS4s5l2hYEBz7s0C"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "Congratz to 4dl2ff on the 1st place, he truly made an excellent edit."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/eXnwEXEoJVs?si=W_VMe5uQDo75kr6F"
+      }
+    ]
+  }
+]
