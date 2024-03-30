@@ -1,0 +1,60 @@
+[
+  {
+    "Name": {
+      "Content": "CSGO Still Cold 1"
+    },
+    "Summary": {
+      "Content": "CSGO Edit"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/pVPLIs2.jpeg"
+    },
+    "Type": {
+      "Content": "Video"
+    },
+    "Links": [
+      {
+        "Text": "Video",
+        "Link": "https://www.youtube.com/watch?v=jLlnyzSwSQI",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Song",
+        "Link": "https://www.youtube.com/watch?v=wIJWIEWRK_I",
+        "Image": "YouTube"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Video</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>< 1 Week</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Skeet, Premiere Pro, Photoshop</span></b>"
+        ],
+        "Styles": {
+          "margin": "auto"
+        }
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "First attempt of making an edit with the Still Cold song.",
+          "Turned out pretty decent with some minor flaws such as the 3rd kill in the second clip not being synced too well."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/jLlnyzSwSQI?si=cyW2DXNyZUDD_71y"
+      }
+    ]
+  }
+]

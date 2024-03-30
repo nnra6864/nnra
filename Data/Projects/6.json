@@ -1,0 +1,59 @@
+[
+  {
+    "Name": {
+      "Content": "CSGO Clockwork Demon"
+    },
+    "Summary": {
+      "Content": "CSGO Edit"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/Q2NVteR.jpeg"
+    },
+    "Type": {
+      "Content": "Video"
+    },
+    "Links": [
+      {
+        "Text": "Video",
+        "Link": "https://www.youtube.com/watch?v=FYcWzA3vQ6o",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Song",
+        "Link": "https://soundcloud.com/incontinenza/clockwork-demon?in=goxlk8d0suoa%2Fsets%2Ffonk",
+        "Image": "SoundCloud"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Video</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>< 1 Week</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Skeet, Premiere Pro, Photoshop</span></b>"
+        ],
+        "Styles": {
+          "margin": "auto"
+        }
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "Some of my best clips combined with some of my worst editing o_0"
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/FYcWzA3vQ6o?si=kxwgTvH4JxJHumeu"
+      }
+    ]
+  }
+]

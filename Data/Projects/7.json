@@ -1,0 +1,60 @@
+[
+  {
+    "Name": {
+      "Content": "CSGO Kill Yourself"
+    },
+    "Summary": {
+      "Content": "CSGO Edit"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/8ZYxkwY.jpeg"
+    },
+    "Type": {
+      "Content": "Video"
+    },
+    "Links": [
+      {
+        "Text": "Video",
+        "Link": "https://www.youtube.com/watch?v=UJ3sa0hAdCM",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Song",
+        "Link": "https://www.youtube.com/watch?v=g5sukHe4A3A",
+        "Image": "YouTube"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Video</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Week</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Skeet, Premiere Pro, Photoshop</span></b>"
+        ],
+        "Styles": {
+          "margin": "auto"
+        }
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "Arguably one of the best edits I ever made.",
+          "It has near perfect sync combined with unique effects and clips."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/UJ3sa0hAdCM?si=LCwCcMAyzcm7JwS2"
+      }
+    ]
+  }
+]

@@ -202,7 +202,6 @@ async function loadProjectFiles(){
         index++;
     }
     if (files.length < 1) { showErrorOverlay(); throw new Error("Failed to fetch projects data!"); }
-    files.reverse();
     return files;
 }
 
@@ -241,8 +240,7 @@ function filterProjects(){
         displayedProjects = displayedProjects.filter(proj => {
             return proj.name.toLowerCase().includes(projectSearch.value.toLowerCase());
         });
-    if (projectsAscending)
-        displayedProjects.reverse();
+    //if (projectsAscending) displayedProjects.reverse();
 }
 
 async function populateProjects(){
@@ -296,14 +294,15 @@ async function toggleOverlay(shown, data){
     if (overlayTransitioning) return;
     overlayTransitioning = true;
     execAfter(() => overlayTransitioning = false, 510)
+    
     if (!shown)
     {
         overlay.classList.remove('Shown');
         window.removeEventListener('resize', updateOverlayDescriptionWidth);
+        execAfter(() => clearOverlayData(), 510)
         return;
     }
     overlay.classList.add('Shown');
-    clearOverlayData();
     loadOverlayData(data);
     updateOverlayDescriptionWidth();
     window.addEventListener('resize', updateOverlayDescriptionWidth);
