@@ -360,7 +360,7 @@ body{
     justify-content: flex-start;
     overflow-y: scroll;
     scrollbar-width: none;
-    padding: 20px 0;
+    padding: 15px 10px;
     border-radius: 20px;
 }
 
@@ -372,8 +372,8 @@ body{
     justify-content: center;
     grid-template-columns: repeat(auto-fill, max(256px, min(5%, 512px)));
     grid-auto-rows: max-content;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
 }
 
 .GridImageContainer{

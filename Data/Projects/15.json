@@ -52,7 +52,8 @@
         "Type": "p",
         "Content": [
           "Final task for the 3rd year of mid school.",
-          ""
+          "It was made for the final middle school assignment in the 3rd year.",
+          "Purpose of this app is to interact with the database in order to manage the hospital staff."
         ]
       },
       { "Type": "s" },
