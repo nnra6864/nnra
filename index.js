@@ -254,7 +254,7 @@ async function populateProjects(){
         projectImages.appendChild(proj.htmlElement);
         unloadGridImage(proj.htmlElement.firstChild);
         loadGridImage(proj.htmlElement.firstChild);
-        await delay(100);
+        await delay(50);
     }
 }
 

@@ -579,7 +579,7 @@ body{
     width: 100%;
     text-align: center;
     font-size: min(4rem, 4vw);
-    color: var(--NordBlue2);
+    color: var(--NordLight3);
 }
 
 .OverlayDescriptionParagraph{
@@ -604,8 +604,8 @@ body{
 }
 
 .OverlayDescriptionImage{
-    align-self: center;
-    width: 100%;
+    margin: auto;
+    max-width: 100%;
     border: 2px solid var(--NordLight1);
     border-radius: 1.5rem;
     user-select: none;

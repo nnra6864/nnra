@@ -1,0 +1,71 @@
+[
+  {
+    "Name": {
+      "Content": "C# Students"
+    },
+    "Summary": {
+      "Content": "Students management app"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/eOyZhnc.png"
+    },
+    "Type": {
+      "Content": "Program"
+    },
+    "Links": [
+      {
+        "Text": "Project",
+        "Link": "https://github.com/nnra6864/Students",
+        "Image": "GitHub"
+      },
+      {
+        "Text": "Video",
+        "Link": "https://www.youtube.com/watch?v=nsMNjPHa_M8",
+        "Image": "YouTube"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Program</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Day</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Visual Studio, Krita</span></b>"
+        ],
+        "Styles": {
+          "margin": "auto"
+        }
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "One of my first Windows Forms Apps programs.",
+          "Made for a middle school assignment in the 3rd year.",
+          "Task was designed to teach us how to interact with text files."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/nsMNjPHa_M8?si=ujspU5wsTDhZML2f"
+      },
+      { "Type": "l" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/rH9NtQk.png"
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/a2JpTP2.png"
+      }
+    ]
+  }
+]
