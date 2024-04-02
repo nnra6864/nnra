@@ -283,7 +283,7 @@ body{
     flex-direction: column;
     gap: min(5px, 0.25vh);
     list-style: inside disc;
-    font-size: min(2rem, 1.5vw)
+    font-size: min(2rem, 1.5vw);
 }
 
 .EnenraContentContainer ul ul{
