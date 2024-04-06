@@ -1,0 +1,88 @@
+[
+  {
+    "Name": {
+      "Content": "TeleShooter"
+    },
+    "Summary": {
+      "Content": "2D Combat Movement Platformer"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/eDnadVr.png"
+    },
+    "Type": {
+      "Content": "Game"
+    },
+    "Links": [
+      {
+        "Text": "Project",
+        "Link": "https://github.com/nnra6864/TeleShooter",
+        "Image": "GitHub"
+      },
+      {
+        "Text": "Video",
+        "Link": "https://www.youtube.com/watch?v=nen39px-ErQ",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Inspiration",
+        "Link": "https://www.youtube.com/watch?v=e9JATFAk_pk",
+        "Image": "YouTube"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Game</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Abandoned</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Month</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, Visual Studio, Photoshop, FL Studio, Premiere Pro</span></b>"
+        ],
+        "Styles": {
+          "margin": "auto"
+        }
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "2D platformer utilizing the idea of portals.",
+          "It uses physics based movement with several mechanics such as wall jumping and weapon knockback.",
+          "I wrote my first enemy AI for this game and while it wasn't too great, I learned a lot and it did the job."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/nen39px-ErQ?si=jdzWBWQyj0UgF5sw"
+      },
+      { "Type": "l"},
+      {
+        "Type": "p",
+        "Content": [
+          "Got the game idea from watching the Vimlark's entry for the Trijam"
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/e9JATFAk_pk?si=qNyGUvwPkKEQnv2e"
+      },
+      { "Type": "l" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/eDnadVr.png"
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/wSNhMbA.png"
+      }
+    ]
+  }
+]
