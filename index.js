@@ -84,8 +84,21 @@ class DataContainer{
                 song.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(element.Content);
                 song.style.backgroundColor = '#2e3440';
                 song.allowFullscreen = true;
+
+                const songWidget = SC.Widget(song);
+                const volumeSlider = document.createElement('input');
+                volumeSlider.type = "range";
+                volumeSlider.min = "0";
+                volumeSlider.max = "100";
+                volumeSlider.value = "100";
+                volumeSlider.classList.add('vertical-slider');
+                volumeSlider.addEventListener('input', (event) => {
+                    songWidget.setVolume(event.target.value);
+                });
+                volumeSlider.dispatchEvent(new Event('input'));
                 
                 div.appendChild(song);
+                div.appendChild(volumeSlider);
                 this.applyStyles(div, element);
                 return div;
             case "s":
@@ -123,6 +136,12 @@ class DataContainer{
             htmlElement.style[property.toLowerCase()] = value);
     }
 }
+
+//Required for SoundCloud
+const SCScript = document.createElement('script');
+SCScript.type = 'text/javascript';
+SCScript.src = 'https://w.soundcloud.com/player/api.js';
+document.head.appendChild(SCScript);
 
 let pages = document.getElementById('Pages');
 let overlay = document.getElementById("Overlay");

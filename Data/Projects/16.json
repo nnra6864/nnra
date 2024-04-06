@@ -61,7 +61,7 @@
         "Type": "y",
         "Content": "https://www.youtube.com/embed/nen39px-ErQ?si=jdzWBWQyj0UgF5sw"
       },
-      { "Type": "l"},
+      { "Type": "l" },
       {
         "Type": "p",
         "Content": [
@@ -72,6 +72,15 @@
       {
         "Type": "y",
         "Content": "https://www.youtube.com/embed/e9JATFAk_pk?si=qNyGUvwPkKEQnv2e"
+      },
+      { "Type": "l" },
+      {
+        "Type": "m",
+        "Content": "https://soundcloud.com/nnra-820924319/teleshooter-menu-loop"
+      },
+      {
+        "Type": "m",
+        "Content": "https://soundcloud.com/nnra-820924319/teleshooter-level-1"
       },
       { "Type": "l" },
       {

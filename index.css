@@ -618,3 +618,7 @@ body{
     border: 2px solid var(--NordLight1);
     border-radius: 1.5rem;
 }
+
+.vertical-slider {
+    transform: rotate(270deg);
+}
