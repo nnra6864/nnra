@@ -65,14 +65,28 @@ class DataContainer{
                 div.appendChild(img);
                 return div;
             case "y":
-                const iframe = document.createElement('iframe');
-                iframe.classList.add('OverlayDescriptionEmbed');
-                iframe.src = 'Content' in element ? element.Content + '?suggestedQuality=hd1440' : '';
-                iframe.allowFullscreen = true;
-                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-                iframe.alt = "Failed to load the video.";
-                this.applyStyles(iframe, element)
-                div.appendChild(iframe);
+                const vid = document.createElement('iframe');
+                vid.classList.add('OverlayDescriptionEmbed');
+                vid.src = 'Content' in element ? element.Content + '?suggestedQuality=hd1440' : '';
+                vid.allowFullscreen = true;
+                vid.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                vid.alt = "Failed to load the video.";
+                this.applyStyles(vid, element)
+                div.appendChild(vid);
+                return div;
+            case "m":
+                const song = document.createElement('iframe');
+                song.width = "100%";
+                song.height = "166";
+                song.scrolling = "no";
+                song.frameBorder = "no";
+                song.allow = "autoplay";
+                song.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(element.Content);
+                song.style.backgroundColor = '#2e3440';
+                song.allowFullscreen = true;
+                
+                div.appendChild(song);
+                this.applyStyles(div, element);
                 return div;
             case "s":
                 const s = document.createElement('div');
