@@ -46,14 +46,14 @@ class DataContainer{
                 const header = document.createElement('h1');
                 header.classList.add('OverlayDescriptionHeader');
                 header.innerHTML = 'Content' in element ? element.Content : '';
-                this.applyStyles(header, element)
+                this.applyStyles(header, element);
                 div.appendChild(header);
                 return div;
             case "p":
                 const paragraph = document.createElement('p');
                 paragraph.classList.add('OverlayDescriptionParagraph');
                 paragraph.innerHTML = element.hasOwnProperty('Content') ? element.Content.join('<br>') : '';
-                this.applyStyles(paragraph, element)
+                this.applyStyles(paragraph, element);
                 div.appendChild(paragraph);
                 return div;
             case "i":
@@ -61,7 +61,7 @@ class DataContainer{
                 img.classList.add('OverlayDescriptionImage');
                 img.src = 'Content' in element ? element.Content : '';
                 img.alt = "Failed to load the image.";
-                this.applyStyles(img, element)
+                this.applyStyles(img, element);
                 div.appendChild(img);
                 return div;
             case "y":
@@ -71,7 +71,7 @@ class DataContainer{
                 vid.allowFullscreen = true;
                 vid.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                 vid.alt = "Failed to load the video.";
-                this.applyStyles(vid, element)
+                this.applyStyles(vid, element);
                 div.appendChild(vid);
                 return div;
             case "m":
@@ -81,11 +81,9 @@ class DataContainer{
                 song.scrolling = "no";
                 song.frameBorder = "no";
                 song.allow = "autoplay";
-                song.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(element.Content);
-                song.style.backgroundColor = '#2e3440';
+                song.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(element.Content)}&color=${encodeURIComponent("#81a1c1")}`;
                 song.allowFullscreen = true;
-
-                const songWidget = SC.Widget(song);
+                
                 const volumeSlider = document.createElement('input');
                 volumeSlider.type = "range";
                 volumeSlider.min = "0";
@@ -93,9 +91,8 @@ class DataContainer{
                 volumeSlider.value = "100";
                 volumeSlider.classList.add('vertical-slider');
                 volumeSlider.addEventListener('input', (event) => {
-                    songWidget.setVolume(event.target.value);
+                    SC.Widget(song).setVolume(event.target.value);
                 });
-                volumeSlider.dispatchEvent(new Event('input'));
                 
                 div.appendChild(song);
                 div.appendChild(volumeSlider);
@@ -104,13 +101,13 @@ class DataContainer{
             case "s":
                 const s = document.createElement('div');
                 s.classList.add('OverlayDescriptionSpace');
-                this.applyStyles(s, element)
+                this.applyStyles(s, element);
                 div.appendChild(s);
                 return div;
             case "l":
                 const l = document.createElement('div');
                 l.classList.add('HorizontalLine');
-                this.applyStyles(l, element)
+                this.applyStyles(l, element);
                 div.appendChild(l);
                 return div;
             default:
