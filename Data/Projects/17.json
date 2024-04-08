@@ -14,28 +14,13 @@
     },
     "Links": [
       {
-        "Text": "Project",
-        "Link": "https://github.com/nnra6864/TeleShooter",
-        "Image": "GitHub"
-      },
-      {
         "Text": "Video",
-        "Link": "https://www.youtube.com/watch?v=nen39px-ErQ",
+        "Link": "https://www.youtube.com/watch?v=bSeT0C8pOTM&feature=youtu.be",
         "Image": "YouTube"
       },
       {
-        "Text": "Inspiration",
-        "Link": "https://www.youtube.com/watch?v=e9JATFAk_pk",
-        "Image": "YouTube"
-      },
-      {
-        "Text": "Menu Loop",
-        "Link": "https://soundcloud.com/nnra-820924319/teleshooter-menu-loop",
-        "Image": "SoundCloud"
-      },
-      {
-        "Text": "Level 1",
-        "Link": "https://soundcloud.com/nnra-820924319/teleshooter-level-1",
+        "Text": "Survivor",
+        "Link": "https://soundcloud.com/nnra-820924319/zombie-plague-survivor",
         "Image": "SoundCloud"
       }
     ],
@@ -49,7 +34,7 @@
         "Type": "p",
         "Content": [
           "<b>Type: <span style='color: var(--NordBlue3)'>Game</span></b>",
-          "<b>Status: <span style='color: var(--NordBlue3)'>Abandoned</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Archived</span></b>",
           "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Month</span></b>",
           "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, Visual Studio, Photoshop, FL Studio, Premiere Pro</span></b>"
         ],
@@ -69,28 +54,12 @@
       { "Type": "s" },
       {
         "Type": "y",
-        "Content": "https://www.youtube.com/embed/nen39px-ErQ?si=jdzWBWQyj0UgF5sw"
-      },
-      { "Type": "l" },
-      {
-        "Type": "p",
-        "Content": [
-          "Got the game idea from watching the Vimlark's entry for the Trijam"
-        ]
-      },
-      { "Type": "s" },
-      {
-        "Type": "y",
-        "Content": "https://www.youtube.com/embed/e9JATFAk_pk?si=qNyGUvwPkKEQnv2e"
+        "Content": "https://www.youtube.com/embed/bSeT0C8pOTM?si=NH2W6gJiq7FU5G0D"
       },
       { "Type": "l" },
       {
         "Type": "m",
-        "Content": "https://soundcloud.com/nnra-820924319/teleshooter-menu-loop"
-      },
-      {
-        "Type": "m",
-        "Content": "https://soundcloud.com/nnra-820924319/teleshooter-level-1"
+        "Content": "https://soundcloud.com/nnra-820924319/zombie-plague-survivor"
       },
       { "Type": "l" },
       {
