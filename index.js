@@ -334,8 +334,6 @@ async function toggleOverlay(shown, data){
     }
     overlay.classList.add('Shown');
     loadOverlayData(data);
-    updateOverlayDescriptionWidth();
-    window.addEventListener('resize', updateOverlayDescriptionWidth);
     overlayContainer.scrollTop = 0;
 }
 
@@ -357,10 +355,6 @@ function clearOverlayData(){
     clearChildElements(overlayHeaderImageContainer);
     clearChildElements(overlayHeaderLinks);
     clearChildElements(overlayDescription);
-}
-
-function updateOverlayDescriptionWidth(){
-    overlayDescription.style.width = `${overlayHeader.clientWidth}px`;
 }
 
 function showErrorOverlay(){

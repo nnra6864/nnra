@@ -524,7 +524,6 @@ input[type="range"]:focus {
     object-fit: cover;
     border: 2px solid var(--NordBlue3);
     border-radius: 10%;
-    transition: height 0.5s ease;
     user-select: none;
 }
 
@@ -536,12 +535,10 @@ input[type="range"]:focus {
 
 .OverlayHeaderName{
     font-size: min(6rem, 6vw);
-    transition: font-size 0.5s ease, color 0.5s ease;
 }
 
 .OverlayHeaderSummary{
     font-size: min(4rem, 4vw);
-    transition: font-size 0.5s ease, color 0.5s ease;
 }
 
 #OverlayHeaderLinks{
@@ -593,6 +590,7 @@ input[type="range"]:focus {
 #OverlayDescription{
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin-top: 10px;
 }
 
