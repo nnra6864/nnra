@@ -328,7 +328,6 @@ async function toggleOverlay(shown, data){
     if (!shown)
     {
         overlay.classList.remove('Shown');
-        window.removeEventListener('resize', updateOverlayDescriptionWidth);
         execAfter(() => clearOverlayData(), 510)
         return;
     }
