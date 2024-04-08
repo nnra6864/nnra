@@ -88,7 +88,7 @@ class DataContainer{
                 volumeSlider.type = "range";
                 volumeSlider.min = "0";
                 volumeSlider.max = "100";
-                volumeSlider.value = "100";
+                volumeSlider.defaultValue = "100";
                 volumeSlider.classList.add('vertical-slider');
                 volumeSlider.addEventListener('input', (event) => {
                     SC.Widget(song).setVolume(event.target.value);
