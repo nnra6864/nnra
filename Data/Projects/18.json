@@ -1,13 +1,13 @@
 [
   {
     "Name": {
-      "Content": "Zombie Plague"
+      "Content": "Edge Shift"
     },
     "Summary": {
-      "Content": "CS 1.6 Zombie Plague Remaster"
+      "Content": "Rhythm Game"
     },
     "Image": {
-      "Content": "https://i.imgur.com/Ld7DwpB.jpeg"
+      "Content": "https://i.imgur.com/bgLcJf8.png"
     },
     "Type": {
       "Content": "Game"
@@ -15,13 +15,18 @@
     "Links": [
       {
         "Text": "Video",
-        "Link": "https://www.youtube.com/watch?v=bSeT0C8pOTM&feature=youtu.be",
+        "Link": "https://youtu.be/7jL1fXMPpZg",
         "Image": "YouTube"
       },
       {
-        "Text": "Survivor",
-        "Link": "https://soundcloud.com/nnra-820924319/zombie-plague-survivor",
+        "Text": "Menu Music",
+        "Link": "https://soundcloud.com/nnra-820924319/save-the-nord-zigzag",
         "Image": "SoundCloud"
+      },
+      {
+        "Text": "Editor Music",
+        "Link": "https://www.youtube.com/watch?v=EBvgDKeEEeg",
+        "Image": "YouTube"
       }
     ],
     "Description": [
@@ -34,9 +39,9 @@
         "Type": "p",
         "Content": [
           "<b>Type: <span style='color: var(--NordBlue3)'>Game</span></b>",
-          "<b>Status: <span style='color: var(--NordBlue3)'>Archived</span></b>",
-          "<b>Development Time: <span style='color: var(--NordBlue3)'>~2 Months</span></b>",
-          "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, Blender, Visual Studio, Photoshop, Figma, FL Studio</span></b>"
+          "<b>Status: <span style='color: var(--NordBlue3)'>Abandoned</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Month</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, Visual Studio, Photoshop, Krita, Kdenlive</span></b>"
         ],
         "Styles": {
           "margin": "auto"
@@ -46,36 +51,21 @@
       {
         "Type": "p",
         "Content": [
-          "My favourite game is, and has always been the Zombie Plague gamemode in CS 1.6.",
-          "I intend to recreate it with better gameplay, graphics and balancing.",
-          "This is an early prototype I took on early in my game dev career.",
-          "It was obviously too complex for me at that time because of networking, source movement etc."
+          "What started as a mobile game with the intention of making money turned into a passion project.",
+          "I grew to enjoy working on the level editor and expanding the possibilities.",
+          "There was, however, a major flaw. The lack of gameplay.",
+          "I eventually gave up on the project because the game concept I came up with wasn't very fun."
         ]
       },
       { "Type": "s" },
       {
         "Type": "y",
-        "Content": "https://www.youtube.com/embed/bSeT0C8pOTM?si=NH2W6gJiq7FU5G0D"
+        "Content": "https://www.youtube.com/embed/7jL1fXMPpZg?si=X4e0veNHG_442vfG"
       },
       { "Type": "l" },
       {
         "Type": "m",
-        "Content": "https://soundcloud.com/nnra-820924319/zombie-plague-survivor"
-      },
-      { "Type": "l" },
-      {
-        "Type": "i",
-        "Content": "https://i.imgur.com/Ld7DwpB.jpeg"
-      },
-      { "Type": "s" },
-      {
-        "Type": "i",
-        "Content": "https://i.imgur.com/zX8wXSs.jpeg"
-      },
-      { "Type": "s" },
-      {
-        "Type": "i",
-        "Content": "https://i.imgur.com/XPwW46W.jpeg"
+        "Content": "https://soundcloud.com/nnra-820924319/save-the-nord-zigzag"
       }
     ]
   }

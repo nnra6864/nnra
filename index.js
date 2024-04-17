@@ -76,13 +76,12 @@ class DataContainer{
                 return div;
             case "m":
                 const song = document.createElement('iframe');
-                song.width = "100%";
-                song.height = "166";
                 song.scrolling = "no";
                 song.frameBorder = "no";
                 song.allow = "autoplay";
                 song.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(element.Content)}&color=${encodeURIComponent("#81a1c1")}`;
                 song.allowFullscreen = true;
+                song.classList.add('OverlayDescriptionSoundCloud');
                 
                 const volumeSlider = document.createElement('input');
                 volumeSlider.type = "range";
