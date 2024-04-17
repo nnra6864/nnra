@@ -508,7 +508,7 @@ input[type="range"]:focus {
     justify-content: flex-start;
     row-gap: 20px;
     width: fit-content;
-    max-width: 75vw;
+    max-width: 50vw;
 }
 
 #OverlayHeader{

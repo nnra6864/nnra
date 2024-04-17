@@ -37,10 +37,7 @@
           "<b>Status: <span style='color: var(--NordBlue3)'>Archived</span></b>",
           "<b>Development Time: <span style='color: var(--NordBlue3)'>~2 Months</span></b>",
           "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, Blender, Visual Studio, Photoshop, Figma, FL Studio</span></b>"
-        ],
-        "Styles": {
-          "margin": "auto"
-        }
+        ]
       },
       { "Type": "l" },
       {

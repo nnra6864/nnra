@@ -32,10 +32,7 @@
           "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
           "<b>Development Time: <span style='color: var(--NordBlue3)'>< 1 Week</span></b>",
           "<b>Software Used: <span style='color: var(--NordBlue3)'>Skeet, Premiere Pro</span></b>"
-        ],
-        "Styles": {
-          "margin": "auto"
-        }
+        ]
       },
       { "Type": "l" },
       {
