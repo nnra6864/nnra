@@ -14,9 +14,14 @@
     },
     "Links": [
       {
-        "Text": "Video",
+        "Text": "YouTube",
         "Link": "https://www.youtube.com/watch?v=aCT1wjrCYIM",
         "Image": "YouTube"
+      },
+      {
+        "Text": "Odysee",
+        "Link": "https://odysee.com/@_Enenra:6/still-cold-ft.-skeet.cc-gamesense.pub:1",
+        "Image": "Odysee"
       },
       {
         "Text": "Song",

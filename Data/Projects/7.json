@@ -14,9 +14,14 @@
     },
     "Links": [
       {
-        "Text": "Video",
+        "Text": "YouTube",
         "Link": "https://www.youtube.com/watch?v=UJ3sa0hAdCM",
         "Image": "YouTube"
+      },
+      {
+        "Text": "Odysee",
+        "Link": "https://odysee.com/@_Enenra:6/%F0%9D%92%A6%F0%9D%92%BE%F0%9D%93%81%F0%9D%93%81-%F0%9D%92%B4%F0%9D%91%9C%F0%9D%93%8A%F0%9D%93%87:8",
+        "Image": "Odysee"
       },
       {
         "Text": "Song",

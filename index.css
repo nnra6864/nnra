@@ -508,7 +508,7 @@ input[type="range"]:focus {
     justify-content: flex-start;
     row-gap: 20px;
     width: fit-content;
-    max-width: 50vw;
+    max-width: 75vw;
 }
 
 #OverlayHeader{
@@ -656,6 +656,7 @@ input[type="range"]:focus {
 .OverlayDescriptionSoundCloud{
     width: 100%;
     height: 166px;
+    border-radius: 1rem;
 }
 
 .vertical-slider {

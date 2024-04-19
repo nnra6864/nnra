@@ -14,9 +14,14 @@
     },
     "Links": [
       {
-        "Text": "Video",
+        "Text": "YouTube",
         "Link": "https://www.youtube.com/watch?v=arOVxNbLp7U",
         "Image": "YouTube"
+      },
+      {
+        "Text": "Odysee",
+        "Link": "https://odysee.com/@_Enenra:6/500-subscribers-special-careless-(csgo:7",
+        "Image": "Odysee"
       },
       {
         "Text": "Song",

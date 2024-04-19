@@ -1,0 +1,55 @@
+[
+  {
+    "Name": {
+      "Content": "Mail Sender"
+    },
+    "Summary": {
+      "Content": "Mail sending utility"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/UFOG8KE.png"
+    },
+    "Type": {
+      "Content": "Program"
+    },
+    "Links": [
+      {
+        "Text": "GitHub",
+        "Link": "https://github.com/nnra6864/MailSender",
+        "Image": "GitHub"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Program</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Week</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Visual Studio, Photoshop</span></b>"
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "A mail sending utility that has several use cases and was a great learning experience.",
+          "It allows users to select a list of senders and a list of receivers.",
+          "There's also an <b>Interval</b> option, which determines how often the mails will be sent.",
+          "Another feature is <b>Repeat</b>, which determines how many mails will be sent, from each, to every account, every interval.",
+          "It supports <b>HTML</b> as well as loading mail bodies from a text file."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/UFOG8KE.png"
+      }
+    ]
+  }
+]

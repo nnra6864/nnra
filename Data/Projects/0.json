@@ -14,9 +14,14 @@
     },
     "Links": [
       {
-        "Text": "Video",
+        "Text": "YouTube",
         "Link": "https://www.youtube.com/watch?v=oamu1BbgEdE",
         "Image": "YouTube"
+      },
+      {
+        "Text": "Odysee",
+        "Link": "https://odysee.com/@_Enenra:6/mm-clips-with-skeet.cc-gamesense.pub:6",
+        "Image": "Odysee"
       },
       {
         "Text": "Song",

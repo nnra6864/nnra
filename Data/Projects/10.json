@@ -14,9 +14,14 @@
     },
     "Links": [
       {
-        "Text": "Video",
+        "Text": "YouTube",
         "Link": "https://www.youtube.com/watch?v=OTOUuZlqAN8",
         "Image": "YouTube"
+      },
+      {
+        "Text": "Odysee",
+        "Link": "https://odysee.com/@_Enenra:6/hvh-highlights-ft.-skeet.cc:5",
+        "Image": "Odysee"
       }
     ],
     "Description": [
