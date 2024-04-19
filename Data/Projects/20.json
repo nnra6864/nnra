@@ -1,0 +1,55 @@
+[
+  {
+    "Name": {
+      "Content": "Windows Font Changer"
+    },
+    "Summary": {
+      "Content": "Change the ugly default font on Windows"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/aCSbXoe.png"
+    },
+    "Type": {
+      "Content": "Program"
+    },
+    "Links": [
+      {
+        "Text": "GitHub",
+        "Link": "https://github.com/nnra6864/WindowsFontChanger",
+        "Image": "GitHub"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Program</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Day</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Visual Studio, Photoshop</span></b>"
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "I absolutely love customizing the appearance of everything.",
+          "Windows is so bad that it doesn't even allow you to change the system font so I decided to do the job for them.",
+          "This app allows you to simply select an installed font of your choice from the dropdown and apply it.",
+          "It works by replacing all the paths Segoe UI points to in the registry.",
+          "In case you are unhappy with the changes, you can always reset them with a single button press."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/aCSbXoe.png"
+      }
+    ]
+  }
+]
