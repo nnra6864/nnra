@@ -40,7 +40,7 @@
         "Content": [
           "I absolutely love customizing the appearance of everything.",
           "Windows is so bad that it doesn't even allow you to change the system font so I decided to do the job for them.",
-          "This app allows you to simply select an installed font of your choice from the dropdown and apply it.",
+          "This app allows you to simply select an installed font from the dropdown and apply it.",
           "It works by replacing all the paths Segoe UI points to in the registry.",
           "In case you are unhappy with the changes, you can always reset them with a single button press."
         ]

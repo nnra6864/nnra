@@ -462,7 +462,7 @@ input[type="range"]:focus {
     z-index: 9999;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     opacity: 0;
     pointer-events: none;
@@ -615,6 +615,8 @@ input[type="range"]:focus {
 }
 
 .OverlayDescriptionParagraph{
+    min-width: 100%;
+    width: min-content;
     overflow-wrap: break-word;
     white-space: pre-wrap;
     font-size: min(2rem, 2vw);
