@@ -1,0 +1,61 @@
+[
+  {
+    "Name": {
+      "Content": "Save The Nord"
+    },
+    "Summary": {
+      "Content": "Ecology awareness game"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/zGze5TP.png"
+    },
+    "Type": {
+      "Content": "Game"
+    },
+    "Links": [
+      {
+        "Text": "Itch",
+        "Link": "https://nnra.itch.io/stn",
+        "Image": "Itch"
+      },
+      {
+        "Text": "GitHub",
+        "Link": "https://github.com/nnra6864/STN",
+        "Image": "GitHub"
+      }
+    ],
+    "Description": [
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Game</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Month</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, Rider, Blender, Photoshop, FL Studio</span></b>"
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "This game was made for the <b>RAF Challenge 2022</b>.",
+          "It's purpose was to raise the ecological awareness.",
+          "Since I don't completely agree with all the points <i>ecology aware</i> people make, I decided to add my own twist.",
+          "Instead of just saving the nature, goal of the game is to keep progressing technologically whilst not destroying everything around you.",
+          "This is one of my best projects, both from the technical and gameplay perspective.",
+          "I, however, underrepresented the game during the competition by not showing all it's systems and complexity and that resulted in me not being in the top 3(as well as judges being slightly unfair imo)."
+        ]
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/zGze5TP.png"
+      }
+    ]
+  }
+]
