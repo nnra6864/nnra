@@ -269,7 +269,6 @@ function filterProjects(){
         displayedProjects = displayedProjects.filter(proj => {
             return proj.name.toLowerCase().includes(projectSearch.value.toLowerCase());
         });
-    //if (projectsAscending) displayedProjects.reverse();
 }
 
 async function populateProjects(){
@@ -295,12 +294,15 @@ function refreshProjects(){
 async function displayPage(i){
     if (!hasLoaded || isSwitching) return;
     isSwitching = true;
+    
     let url = window.location.origin;
-    if (i !== 1) url += i === 0 ? "Projects" : "Posts";
-    history.pushState(null, '', url);
+    if (i !== 1) url += i === 0 ? "?Projects" : "?Posts";
+    history.replaceState(null, '', url);
+    
     pages.classList.remove("NoTransition");
     pages.classList.add("Transition");
     pages.style.transform = `translateX(${i === 0 ? 100 : i === 1 ? 0 : -100}vw)`;
+    
     await delay(500);
     isSwitching = false;
     execAfter(() => { if (isSwitching) return; pages.classList.remove("Transition"); pages.classList.add("NoTransition"); }, 550);
@@ -322,7 +324,7 @@ async function loadGridImage(image){
     image.classList.add("Loaded");
 }
 
-async function toggleOverlay(shown, data){
+async function toggleOverlay(shown, project){
     if (overlayTransitioning) return;
     overlayTransitioning = true;
     execAfter(() => overlayTransitioning = false, 510)
@@ -334,18 +336,22 @@ async function toggleOverlay(shown, data){
         return;
     }
     overlay.classList.add('Shown');
-    loadOverlayData(data);
+    loadOverlayData(project);
     overlayContainer.scrollTop = 0;
 }
 
-async function loadOverlayData(data){
-    overlayHeaderImageContainer.appendChild(data.imageElement);
-    overlayHeaderNameContainer.appendChild(data.nameElement);
-    overlayHeaderSummaryContainer.appendChild(data.summaryElement);
-    data.links.forEach(l => {
+async function loadOverlayData(project){
+    let url = window.location.origin + "?Projects&";
+    url += projectList.length - projectList.indexOf(project) - 1;
+    history.replaceState(null, '', url);
+    
+    overlayHeaderImageContainer.appendChild(project.imageElement);
+    overlayHeaderNameContainer.appendChild(project.nameElement);
+    overlayHeaderSummaryContainer.appendChild(project.summaryElement);
+    project.links.forEach(l => {
         overlayHeaderLinks.appendChild(l);
     });
-    data.description.forEach(el => {
+    project.description.forEach(el => {
         overlayDescription.appendChild(el);
     });
 }
