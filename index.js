@@ -295,6 +295,9 @@ function refreshProjects(){
 async function displayPage(i){
     if (!hasLoaded || isSwitching) return;
     isSwitching = true;
+    let url = window.location.origin;
+    if (i !== 1) url += i === 0 ? "Projects" : "Posts";
+    history.pushState(null, '', url);
     pages.classList.remove("NoTransition");
     pages.classList.add("Transition");
     pages.style.transform = `translateX(${i === 0 ? 100 : i === 1 ? 0 : -100}vw)`;
