@@ -223,10 +223,20 @@ async function loadPage(){
 
 async function loadFromParams(){
     let params = new URLSearchParams(window.location.search);
-    const paramsCount = params ? params.toString().split('&').length : 0;
-    if (!paramsCount < 1) return;
-    let loading = params[0];
+    history.replaceState(null, '', window.location.origin);
     
+    let page = params.get("page");
+    let project = parseInt(params.get("project"));
+    let post = parseInt(params.get("post")); //Implement with posts
+    
+    if (!isNaN(project) && project < projectList.length){
+        await displayPage(0, true);
+        await delay(2000);
+        await toggleOverlay(true, projectList[projectList.length - project - 1], true);
+        return;
+    }
+    
+    await displayPage(page === "Projects" ? 0 : page === "Posts" ? 2 : 1, true);
 }
 
 async function loadProjectFiles(){
@@ -300,21 +310,26 @@ function refreshProjects(){
     populateProjects();
 }
 
-async function displayPage(i){
-    if (!hasLoaded || isSwitching) return;
+async function displayPage(i, fromParams = false) {
+    if (!fromParams)
+        if (!hasLoaded || isSwitching) return;
     isSwitching = true;
-    
-    let url = window.location.origin;
-    if (i !== 1) url += i === 0 ? "?Projects" : "?Posts";
+
+    let url = window.location.origin + "?page=";
+    url += i === 0 ? "Projects" : i === 1 ? "Enenra" : "Posts";
     history.replaceState(null, '', url);
-    
+
     pages.classList.remove("NoTransition");
     pages.classList.add("Transition");
     pages.style.transform = `translateX(${i === 0 ? 100 : i === 1 ? 0 : -100}vw)`;
-    
+
     await delay(500);
     isSwitching = false;
-    execAfter(() => { if (isSwitching) return; pages.classList.remove("Transition"); pages.classList.add("NoTransition"); }, 550);
+    execAfter(() => {
+        if (isSwitching) return;
+        pages.classList.remove("Transition");
+        pages.classList.add("NoTransition");
+    }, 550);
     if (i === 0 && reloadCount === 0) refreshProjects();
 }
 
@@ -333,15 +348,16 @@ async function loadGridImage(image){
     image.classList.add("Loaded");
 }
 
-async function toggleOverlay(shown, project){
-    if (overlayTransitioning) return;
+async function toggleOverlay(shown, project, fromParams = false){
+    if (!fromParams)
+        if (!hasLoaded || overlayTransitioning) return;
     overlayTransitioning = true;
     execAfter(() => overlayTransitioning = false, 510)
     
     if (!shown)
     {
         let url = window.location.origin;
-        url += '?' + new URLSearchParams(window.location.search).keys().next().value;
+        url += '?page=' + new URLSearchParams(window.location.search).get("page");
         history.replaceState(null, '', url);
         overlay.classList.remove('Shown');
         execAfter(() => clearOverlayData(), 510)
@@ -353,7 +369,7 @@ async function toggleOverlay(shown, project){
 }
 
 async function loadOverlayData(project){
-    let url = window.location.origin + "?Projects&";
+    let url = window.location.origin + "?page=Projects&project=";
     url += projectList.length - projectList.indexOf(project) - 1;
     history.replaceState(null, '', url);
     
