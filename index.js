@@ -223,7 +223,7 @@ async function loadPage(){
 
 async function loadFromParams(){
     let params = new URLSearchParams(window.location.search);
-    history.replaceState(null, '', window.location.origin);
+    history.replaceState(null, '', window.location.origin + "/nnra/");
     
     let page = params.get("page");
     let project = parseInt(params.get("project"));
@@ -315,7 +315,7 @@ async function displayPage(i, fromParams = false) {
         if (!hasLoaded || isSwitching) return;
     isSwitching = true;
 
-    let url = window.location.origin + "?page=";
+    let url = window.location.origin + "/nnra/?page=";
     url += i === 0 ? "Projects" : i === 1 ? "Enenra" : "Posts";
     history.replaceState(null, '', url);
 
@@ -357,7 +357,7 @@ async function toggleOverlay(shown, project, fromParams = false){
     if (!shown)
     {
         let url = window.location.origin;
-        url += '?page=' + new URLSearchParams(window.location.search).get("page");
+        url += "/nnra/?page=" + new URLSearchParams(window.location.search).get("page");
         history.replaceState(null, '', url);
         overlay.classList.remove('Shown');
         execAfter(() => clearOverlayData(), 510)
@@ -369,7 +369,7 @@ async function toggleOverlay(shown, project, fromParams = false){
 }
 
 async function loadOverlayData(project){
-    let url = window.location.origin + "?page=Projects&project=";
+    let url = window.location.origin + "/nnra/?page=Projects&project=";
     url += projectList.length - projectList.indexOf(project) - 1;
     history.replaceState(null, '', url);
     
