@@ -216,8 +216,17 @@ async function loadPage(){
     await delay(1000);
     let headerButtons = document.getElementsByClassName('HeaderButton');
     Array.from(headerButtons).forEach(element => {element.classList.add('Loaded')});
-    
+
+    await loadFromParams();
     hasLoaded = true;
+}
+
+async function loadFromParams(){
+    let params = new URLSearchParams(window.location.search);
+    const paramsCount = params ? params.toString().split('&').length : 0;
+    if (!paramsCount < 1) return;
+    let loading = params[0];
+    
 }
 
 async function loadProjectFiles(){
@@ -331,6 +340,9 @@ async function toggleOverlay(shown, project){
     
     if (!shown)
     {
+        let url = window.location.origin;
+        url += '?' + new URLSearchParams(window.location.search).keys().next().value;
+        history.replaceState(null, '', url);
         overlay.classList.remove('Shown');
         execAfter(() => clearOverlayData(), 510)
         return;
