@@ -610,8 +610,16 @@ input[type="range"]:focus {
 .OverlayDescriptionHeader{
     width: 100%;
     text-align: center;
+}
+
+h1.OverlayDescriptionHeader{
     font-size: min(4rem, 4vw);
     color: var(--NordLight3);
+}
+
+h2.OverlayDescriptionHeader{
+    font-size: min(3.5rem, 3.5vw);
+    color: var(--NordLight2);
 }
 
 .OverlayDescriptionParagraph{

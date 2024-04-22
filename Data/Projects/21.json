@@ -22,12 +22,18 @@
         "Text": "GitHub",
         "Link": "https://github.com/nnra6864/STN",
         "Image": "GitHub"
+      },
+      {
+        "Text": "SoundCloud",
+        "Link": "https://soundcloud.com/nnra-820924319/sets/save-the-nord",
+        "Image": "SoundCloud"
       }
     ],
     "Description": [
+      { "Type": "l" },
       {
         "Type": "h",
-        "Content": "Description"
+        "Content": "Stats"
       },
       { "Type": "l" },
       {
@@ -41,6 +47,11 @@
       },
       { "Type": "l" },
       {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
         "Type": "p",
         "Content": [
           "This game was made for the <b>RAF Challenge 2022</b>.",
@@ -51,10 +62,29 @@
           "I, however, underrepresented the game during the competition by not showing all it's systems and complexity and that resulted in me not being in the top 3(as well as judges being slightly unfair imo)."
         ]
       },
-      { "Type": "s" },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Media"
+      },
+      { "Type": "l" },
       {
         "Type": "i",
         "Content": "https://i.imgur.com/zGze5TP.png"
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Music"
+      },
+      { "Type": "l" },
+      {
+        "Type": "m",
+        "Content": "https://soundcloud.com/nnra-820924319/save-the-nord-zigzag"
+      },
+      {
+        "Type": "m",
+        "Content": "https://soundcloud.com/nnra-820924319/stn-at-the-speed-of-force"
       }
     ]
   }

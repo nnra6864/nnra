@@ -49,6 +49,13 @@ class DataContainer{
                 this.applyStyles(header, element);
                 div.appendChild(header);
                 return div;
+            case "h2":
+                const header2 = document.createElement('h2');
+                header2.classList.add('OverlayDescriptionHeader');
+                header2.innerHTML = 'Content' in element ? element.Content : '';
+                this.applyStyles(header2, element);
+                div.appendChild(header2);
+                return div;
             case "p":
                 const paragraph = document.createElement('p');
                 paragraph.classList.add('OverlayDescriptionParagraph');
