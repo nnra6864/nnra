@@ -389,6 +389,8 @@ async function loadOverlayData(project){
     project.description.forEach(el => {
         overlayDescription.appendChild(el);
     });
+    
+    updateMetaTags(`Enenra->Projects->${project.name}`, project.description, project.image, url);
 }
 
 function clearOverlayData(){
@@ -408,4 +410,11 @@ function applyTooltip(elements, tooltip){
     elements.forEach(el => {
        el.title = tooltip; 
     });
+}
+
+function updateMetaTags(title = "nn", description = "Enenra website", image = "https://i.imgur.com/iWYr4ug.gif", url = "https://nnra6864.github.io/nnra/") {
+    document.querySelector('meta[property="og:title"]').setAttribute('content', title);
+    document.querySelector('meta[property="og:description"]').setAttribute('content', description);
+    document.querySelector('meta[property="og:image"]').setAttribute('content', image);
+    document.querySelector('meta[property="og:url"]').setAttribute('content', url);
 }
