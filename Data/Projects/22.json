@@ -1,0 +1,100 @@
+[
+  {
+    "Name": {
+      "Content": "Hope<"
+    },
+    "Summary": {
+      "Content": "MET Talents 2023"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/BKMhXdp.png"
+    },
+    "Type": {
+      "Content": "Game"
+    },
+    "Links": [
+      {
+        "Text": "Itch",
+        "Link": "https://nnra.itch.io/hopeless",
+        "Image": "Itch"
+      },
+      {
+        "Text": "Playthrough",
+        "Link": "https://www.youtube.com/watch?v=5PuP6CiHfyE",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "Presentation",
+        "Link": "https://www.youtube.com/watch?v=bP9LCOJZCvY",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "GitHub",
+        "Link": "https://github.com/nnra6864/Hopeless",
+        "Image": "GitHub"
+      },
+      {
+        "Text": "SoundCloud",
+        "Link": "https://soundcloud.com/nnra-820924319/sets/hope",
+        "Image": "SoundCloud"
+      }
+    ],
+    "Description": [
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Stats"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Game</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Month</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, Rider, FL Studio, Photoshop, Krita, Premiere Pro</span></b>"
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "This game was made for <a href='https://www.metropolitan.ac.rs/novosti/odrzano-finale-met-talenta-2023/'>MET Talents 2023</a>.",
+          "I actually won the thing.",
+          "This is not my best game at all and I spent most of my time experimenting with the VFX Graph.",
+          "Theme was <b>Mental health improvement and prevention of stress and anxiety</b>."
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Media"
+      },
+      { "Type": "l" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/5PuP6CiHfyE?si=nTCvLyTQgyRAMNk9"
+      },
+      { "Type": "s" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/bP9LCOJZCvY?si=whRepFlqcq9x9qgm"
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/BKMhXdp.png"
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/qxSHOZl.png"
+      }
+    ]
+  }
+]
