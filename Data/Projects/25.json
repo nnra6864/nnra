@@ -1,0 +1,91 @@
+[
+  {
+    "Name": {
+      "Content": "Potential"
+    },
+    "Summary": {
+      "Content": "My Last University Project"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/pyjRvo9.png"
+    },
+    "Type": {
+      "Content": "Game"
+    },
+    "Links": [
+      {
+        "Text": "Itch",
+        "Link": "https://nnra.itch.io/potential",
+        "Image": "Itch"
+      },
+      {
+        "Text": "YouTube",
+        "Link": "https://www.youtube.com/watch?v=Q2e1A5voTUw",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "GitHub",
+        "Link": "https://github.com/nnra6864/Potential",
+        "Image": "GitHub"
+      },
+      {
+        "Text": "SoundCloud",
+        "Link": "https://soundcloud.com/nnra-820924319/sets/potential",
+        "Image": "SoundCloud"
+      }
+    ],
+    "Description": [
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Stats"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Game</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Week</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, FL Studio, Photoshop, Premiere Pro</span></b>"
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "Third and final game I made for Metropolitan University.",
+          "It's a simple platformer.",
+          "I've been fed up with visual scripting and lost all the passion I had for game development at this point.",
+          "I decided to make one last game, sort of as a parting thing.",
+          "Message that the game is trying to deliver to players is to stop wasting their time and use their potential."
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Media"
+      },
+      { "Type": "l" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/Q2e1A5voTUw?si=K2etlzB0SMgYSFhg"
+      },
+      { "Type": "s" },
+      {
+        "Type": "m",
+        "Content": "https://soundcloud.com/nnra-820924319/loop"
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/pyjRvo9.png"
+      }
+    ]
+  }
+]
