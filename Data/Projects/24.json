@@ -1,0 +1,91 @@
+[
+  {
+    "Name": {
+      "Content": "ChronoScape"
+    },
+    "Summary": {
+      "Content": "Flappy Bird Remake"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/9EfsVVR.png"
+    },
+    "Type": {
+      "Content": "Game"
+    },
+    "Links": [
+      {
+        "Text": "Itch",
+        "Link": "https://nnra.itch.io/chronoscape",
+        "Image": "Itch"
+      },
+      {
+        "Text": "YouTube",
+        "Link": "https://www.youtube.com/watch?v=v5MyKzoEvm0",
+        "Image": "YouTube"
+      },
+      {
+        "Text": "GitHub",
+        "Link": "https://github.com/nnra6864/ChronoScape",
+        "Image": "GitHub"
+      },
+      {
+        "Text": "SoundCloud",
+        "Link": "https://soundcloud.com/nnra-820924319/sets/chronoscape",
+        "Image": "SoundCloud"
+      }
+    ],
+    "Description": [
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Stats"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Game</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Month</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Unity, FL Studio, Photoshop, Premiere Pro</span></b>"
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "Second game I made for Metropolitan University.",
+          "It's a remake of Space Invaders.",
+          "I was, again, forced to use the visual scripting which limited my possibilities quite a bit and made it a lot harder to finish the game.",
+          "For that reason, I decided to mainly focus on shaders and particles which was a good choice looking at the result.",
+          "This is the last project I somewhat enjoyed working on."
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Media"
+      },
+      { "Type": "l" },
+      {
+        "Type": "y",
+        "Content": "https://www.youtube.com/embed/v5MyKzoEvm0?si=xPxcod3ejs-vDuxE"
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/9EfsVVR.png"
+      },
+      { "Type": "s" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/55bVO5q.png"
+      }
+    ]
+  }
+]
