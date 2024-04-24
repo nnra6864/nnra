@@ -1,0 +1,69 @@
+[
+  {
+    "Name": {
+      "Content": "Hyprmouse"
+    },
+    "Summary": {
+      "Content": "Vim like mouse movement on Hyprland"
+    },
+    "Image": {
+      "Content": "https://i.imgur.com/mxrgOB8.png"
+    },
+    "Type": {
+      "Content": "Program"
+    },
+    "Links": [
+      {
+        "Text": "GitHub",
+        "Link": "https://github.com/nnra6864/Hyprmouse",
+        "Image": "GitHub"
+      },
+      {
+        "Text": "Hyprland",
+        "Link": "https://hyprland.org/",
+        "Image": "Hyprland"
+      }
+    ],
+    "Description": [
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Stats"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "<b>Type: <span style='color: var(--NordBlue3)'>Program</span></b>",
+          "<b>Status: <span style='color: var(--NordBlue3)'>Finished</span></b>",
+          "<b>Development Time: <span style='color: var(--NordBlue3)'>~1 Week</span></b>",
+          "<b>Software Used: <span style='color: var(--NordBlue3)'>Hyprland, Ydotool, Neovim, Krita</span></b>"
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Description"
+      },
+      { "Type": "l" },
+      {
+        "Type": "p",
+        "Content": [
+          "A utility I made for Hyprland that allows you to move your cursor with keyboard.",
+          "It supports common vimotions such as hjkl, repeating the action by entering a number first etc.",
+          "Check out <a href='https://hyprland.org/'>Hyprland</a>, the best window manager."
+        ]
+      },
+      { "Type": "l" },
+      {
+        "Type": "h",
+        "Content": "Media"
+      },
+      { "Type": "l" },
+      {
+        "Type": "i",
+        "Content": "https://i.imgur.com/mxrgOB8.png"
+      }
+    ]
+  }
+]
