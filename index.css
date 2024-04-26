@@ -168,7 +168,8 @@ input[type="range"]:focus {
     height: 0;
     border-radius: 0;
     box-shadow: none;
-    transition: width 1s var(--Expo), height 1s var(--Expo), border-radius 1s var(--Expo), box-shadow 1s var(--Expo);
+    font-size: 0;
+    transition: width 1s var(--Expo), height 1s var(--Expo), border-radius 1s var(--Expo), box-shadow 1s var(--Expo), font-size 1s var(--Expo);
 
     display: flex;
     flex-direction: row;
@@ -182,6 +183,7 @@ input[type="range"]:focus {
     background-color: var(--NordDark1);
     box-shadow: 0 0 var(--ContainerShadowSize) var(--ContainerShadowSize) var(--NordDark1);
     border-radius: 1.5rem;
+    font-size: 2.5vw;
 }
 
 #LoadingContainer.Unload{
