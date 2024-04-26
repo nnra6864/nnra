@@ -44,11 +44,6 @@
           "Another feature is <b>Repeat</b>, which determines how many mails will be sent, from each, to every account, every interval.",
           "It supports <b>HTML</b> as well as loading mail bodies from a text file."
         ]
-      },
-      { "Type": "s" },
-      {
-        "Type": "m",
-        "Content": "https://soundcloud.com/nnra-820924319/save-the-nord-zigzag"
       }
     ]
   }
