@@ -167,6 +167,7 @@ let projectsAscending = true;
 let reloadCount = 0;
 
 let overlayContainer = document.getElementById("OverlayContainer");
+let overlayContent = document.getElementById("OverlayContent");
 let overlayHeader = document.getElementById("OverlayHeader");
 let overlayHeaderNameContainer = document.getElementById("OverlayHeaderNameContainer");
 let overlayHeaderSummaryContainer = document.getElementById("OverlayHeaderSummaryContainer");
@@ -367,12 +368,11 @@ async function toggleOverlay(shown, project, fromParams = false){
         url += "/nnra/?page=" + new URLSearchParams(window.location.search).get("page");
         history.replaceState(null, '', url);
         overlay.classList.remove('Shown');
-        execAfter(() => clearOverlayData(), 510)
+        execAfter(() => { overlayContainer.scrollTop = 0; clearOverlayData(); }, 510)
         return;
     }
     overlay.classList.add('Shown');
-    loadOverlayData(project);
-    overlayContainer.scrollTop = 0;
+    await loadOverlayData(project);
 }
 
 async function loadOverlayData(project){
