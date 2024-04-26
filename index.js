@@ -199,16 +199,19 @@ function clearChildElements(element){
 }
 
 async function loadPage(){
-    for (const file of (await loadProjectFiles())) { await loadData(file); }
-    projectList.reverse();
-    loadedProjects = true;
-   
     applyTooltip(knowledgeTooltipElements, knowledgeTooltip);
     
     let loadingContainer = document.getElementById('LoadingContainer');
     loadingContainer.classList.add('Load');
-
-    await delay(3000);
+    
+    const startTime = Date.now();
+    for (const file of (await loadProjectFiles())) { await loadData(file); }
+    projectList.reverse();
+    loadedProjects = true;
+    const execTime = Date.now() - startTime;
+    console.log(execTime);
+    if (execTime < 3000) await delay(3000 - execTime);
+    
     let content = document.getElementById('Content');
     content.classList.add('ShowPages');
     execAfter(() => content.classList.add('Loaded'), 1100);
