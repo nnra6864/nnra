@@ -59,11 +59,10 @@
       {
         "Type": "p",
         "Content": [
-          "Second game I made for Metropolitan University.",
-          "It's a remake of Space Invaders.",
-          "I was, again, forced to use the visual scripting which limited my possibilities quite a bit and made it a lot harder to finish the game.",
-          "For that reason, I decided to mainly focus on shaders and particles which was a good choice looking at the result.",
-          "This is the last project I somewhat enjoyed working on."
+          "Survive the heavy thunderstorm by manipulating time and flying through lightning strikes.",
+          "How long will you be able to last in this captivating Flappy Bird remake?",
+          "ChronoScape is an engaging game that combines the mechanics of Flappy Bird with unique time manipulation features.",
+          "Set in the middle of a thunderstorm, you must navigate through lightning strikes using your unique abilities to control time and obliterate lightning rods."
         ]
       },
       { "Type": "l" },
